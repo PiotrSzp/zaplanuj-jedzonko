@@ -1,0 +1,113 @@
+.app-body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.app-container {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 245px 1fr;
+  grid-template-rows: 85px 1fr;
+  grid-template-areas: "head head" "nav app";
+  grid-gap: 0;
+}
+
+
+//=========== APP HEADER ================
+
+.app-header {
+  grid-area: head;
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+  background: $colorText;
+  padding-left: 20px;
+  padding-right: 42px;
+  box-shadow: inset 0 -8px 10px -10px black;
+
+  .app-header__title {
+  }
+
+  .app-header__user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    i {
+      font-size: 42px;
+      color: $colorOrange;
+    }
+  }
+
+  .app-header__name {
+    font-size: 28px;
+    margin-right: 22px;
+  }
+
+  .app-header__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+//=========== APP NAV =================
+.app-nav {
+  grid-area: nav;
+  background-color: $colorNav;
+}
+
+.app-nav__item {
+
+}
+
+.app-nav__link {
+  display: block;
+  padding: 26px 20px;
+  font-size: 22px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  border-left: 0 solid $colorOrange;
+  transition: .2s;
+  box-sizing: border-box;
+}
+
+.app-nav__link--active, .app-nav__link:hover {
+  border-left: 6px solid $colorOrange;
+  padding-left: 14px;
+}
+
+
+.app-nav__link--active {
+  font-weight: 700;
+}
+
+
+.app-nav__link--active::after {
+  content: '\003E';
+  color: $colorOrange;
+  display: block;
+  position: absolute;;
+  right: 10px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+
+//=========== APP MAIN ================
+.app-main {
+  grid-area: app;
+  background-image: url("../images/app-background.png");
+
+}
+
