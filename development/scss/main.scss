@@ -6,5 +6,37 @@
 
 
 body{
-  background-color: #BADA55;
+  background-color: #FFFFFA;
+}
+
+
+.author__container {
+  margin: 0 auto;
+  font-family: 'Open Sans';
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.author__picture {
+  margin: 40px 0;
+  background: #4a4a49;
+  width: 300px;
+  height: 300px;
+}
+
+.author__info {
+  margin: 40px 0;
+  width: 40%;
+  color: #4a4a49;
+
+        h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+
+        .author__info--text {
+          line-height: 25px;
+
+        }
 }
