@@ -8,3 +8,40 @@
 body{
   background-color: #BADA55;
 }
+
+//@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+//html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); }
+
+
+
+////---------------
+
+
+
+.section__call{
+  margin: 0;
+  background: #5B5C5B;
+  width: 100%;
+  height: 200px;
+  display: flex;
+
+  justify-content: space-between;
+  
+}
+.section__call_text{
+  box-sizing: border-box;
+  justify-content:center;
+  color: #EBEBEB;
+  padding: 50px;
+}
+.button__call_action{
+  background: #F2652D;
+  color:#EBEBEB;
+  box-sizing: border-box;
+  
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  margin-right: 50px;
+}
