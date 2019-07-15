@@ -8,3 +8,58 @@
 body{
   background-color: #BADA55;
 }
+
+.about__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  font-family: Open Sans;
+}
+.about__box {
+  margin: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #4a4a49;
+
+}
+
+.box__image--check {
+  height: 60px;
+  width: 60px;
+  i {
+    font-size: 60px;
+  }
+}
+
+
+
+.box__image--clock {
+  height: 60px;
+  width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+}
+
+.box__image--menu {
+  height: 60px;
+  width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+}
+
+.about__box > h1 {
+  text-align: center;
+}
+
+.box__text {
+  line-height: 25px;
+  text-align: center;
+}
