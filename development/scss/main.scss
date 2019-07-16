@@ -3,8 +3,135 @@
 //
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+@font-face {
+  font-family: 'charmonmanbold';
+  src: url('../Fonts/charmonman-bold-webfont.woff2') format('woff2'),
+  url('../Fonts/charmonman-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'charmonmanregular';
+  src: url('../Fonts/charmonman-regular-webfont.woff2') format('woff2'),
+  url('../Fonts/charmonman-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../Fonts/opensans-bold-webfont.woff2') format('woff2'),
+  url('../Fonts/opensans-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'open_sans_lightregular';
+  src: url('../Fonts/opensans-light-webfont.woff2') format('woff2'),
+  url('../Fonts/opensans-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../Fonts/opensans-regular-webfont.woff2') format('woff2'),
+  url('../Fonts/opensans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body{
   background-color: #BADA55;
+}
+
+.header__container {
+  background-color: #4a4a49;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo__container {
+  width: 40%;
+  margin-left: 50px;
+  font-family: 'charmonmanregular', cursive;
+  font-weight: lighter;
+}
+.logo__header {
+  color: white;
+}
+.logo__second__word {
+  color: #E58A20;
+}
+.menu__header {
+  width: 60%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.menu__list{
+  margin: 0;
+  padding: 0;
+}
+.menu__element {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.menu__element {
+  width: calc(100% / 4 - 10px);
+}
+
+.menu__link {
+  text-decoration: none;
+  color: white;
+}
+
+.link__first {
+  color: #E58A20;
+}
+
+.footer__big__container {
+  background-color: #4a4a49;
+  //display: flex;
+  //justify-content: space-around;
+  //align-items: center;
+  //padding: 20px;
+
+}
+.footer__small__container {
+  width: calc(100% / 3 - 30px);
+  height: 200px;
+  float: left;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: 'Open Sans', Arial, sans-serif;
+  padding: 10px;
+}
+
+input {
+  background-color: #E58A20;
+  color: white;
+}
+
+.footer__media .link__fb {
+  width: 40px;
+  height: 40px;
+}
+
+.footer__copy__container {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+.copyright__footer {
+  color: white;
+}
+.www__footer {
+  color: #E58A20;
 }
