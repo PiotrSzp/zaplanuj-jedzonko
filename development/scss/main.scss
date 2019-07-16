@@ -1,8 +1,26 @@
+//======== COLORS ========
+$colorNav: #5B605F;  // panel boczny, nawigacja
+$colorText : #4a4a49;  // nagłówek, , kolor tekstu w kolumnach
+$colorOrange : #FF6600;  // przyciski, wyróżnienia, nagłówki ekranów
+$colorBackg : #FFFFFA;  // kolor tła ekranów
+$colorInfo : #3498DB;  // kolor wiadomości typu info,
+$colorWarn : #FFB03B;  // kolor wiadomości typu warning
+$colorSuccess : #468966;  // kolor wiadomości typu success
+$colorTrash : #BD4932;  // kolor ikony kosza
+$colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
+&colorFocus: lightblue; //kolor po podświetleniu formularzy
+
+
 // CDN FONTAWESOME
 // <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 //
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+
+@import "app";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
 
 
 .newsletter__container {
@@ -15,7 +33,7 @@
 
 .newsletter__text {
   h3 {
-  color: white;
+  color: $colorBackg;
   font-size: 30px;
   font-family: 'Open Sans';
   letter-spacing: 1px;
@@ -39,7 +57,7 @@
     width: 150px;
     height: 30px;
     padding: 0;
-    color: white;
+    color: $colorBackg;
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
@@ -48,12 +66,44 @@
 
   .newsletter__form > input {
     &:focus {
-      background-color: lightblue;
+      background-color: $colorFocus;
     }
   }
 
   .newsletter__submit {
     &:focus {
-      border: 1px solid lightblue;
+      border: 1px solid $colorFocus;
     }
   }
+
+.author__container {
+  margin: 0 auto;
+  font-family: 'Open Sans';
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.author__picture {
+  margin: 40px 0;
+  background: #4a4a49;
+  width: 300px;
+  height: 300px;
+}
+
+.author__info {
+  margin: 40px 0;
+  width: 40%;
+  color: #4a4a49;
+
+        h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+
+        .author__info--text {
+          line-height: 25px;
+
+        }
+}
+
