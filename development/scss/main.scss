@@ -22,6 +22,9 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
 
+body{
+  background-color: $colorBackg;
+}
 
 .newsletter__container {
   background: #4a4a49;
@@ -31,14 +34,15 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
   padding: 0 100px;
 }
 
+
 .newsletter__text {
   h3 {
-  color: $colorBackg;
+  color: white;
   font-size: 30px;
   font-family: 'Open Sans';
   letter-spacing: 1px;
   }
-}
+
 
 .newsletter__form {
   display: flex;
@@ -57,7 +61,7 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
     width: 150px;
     height: 30px;
     padding: 0;
-    color: $colorBackg;
+    color: white;
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
@@ -75,6 +79,61 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
       border: 1px solid $colorFocus;
     }
   }
+
+.about__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Open Sans';
+}
+.about__box {
+  margin: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #4a4a49;
+
+}
+
+.box__image--check {
+  height: 60px;
+  width: 60px;
+  i {
+    font-size: 60px;
+  }
+}
+
+
+
+.box__image--clock {
+  height: 60px;
+  width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+}
+
+.box__image--menu {
+  height: 60px;
+  width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+}
+
+.about__box > h1 {
+  text-align: center;
+}
+
+.box__text {
+  line-height: 25px;
+  text-align: center;
+=======
 
 .author__container {
   margin: 0 auto;
@@ -105,5 +164,6 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
           line-height: 25px;
 
         }
-}
+  }
+  }
 
