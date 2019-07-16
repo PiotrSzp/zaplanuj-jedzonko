@@ -5,6 +5,55 @@
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
 
-body{
-  background-color: #BADA55;
+.newsletter__container {
+  background: #4a4a49;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
 }
+
+.newsletter__text {
+  h3 {
+  color: white;
+  font-size: 30px;
+  font-family: 'Open Sans';
+  letter-spacing: 1px;
+  }
+}
+
+.newsletter__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  input {
+    width: 200px;
+    height: 30px;
+    padding: 0;
+    border: none;
+  }
+  
+  .newsletter__submit {
+    background: #FF6600;
+    border: none;
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    }
+  }
+
+  .newsletter__form > input {
+    &:focus {
+      background-color: lightblue;
+    }
+  }
+
+  .newsletter__submit {
+    &:focus {
+      border: 1px solid lightblue;
+    }
+  }
