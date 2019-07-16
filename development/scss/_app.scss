@@ -1,28 +1,51 @@
+//=========== 1. APP ================ (ogolne style dla całej apki)
+
 .app-body {
   font-family: 'Open Sans', Arial, sans-serif;
   color: #ffffff;
   margin: 0;
   padding: 0;
+  //overflow: hidden;
 
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
+
+
+  .app-container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 245px 1fr;
+    grid-template-rows: 85px 1fr;
+    grid-template-areas: "head head" "nav app";
+    grid-gap: 0;
+  }
+
+  .hidden-label {
+    position: absolute;
+    left: -99999999999999px;
+  }
+
+  .btn { // ~~~~~~~~~~ BUTTONY ~~~~~~~~~
+    display: block;
+    background-color: $colorOrange;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+
+    &--big {
+      width: 126px;
+      height: 38px;
+    }
+  }
 }
 
-.app-container {
-  display: grid;
-  width: 100%;
-  height: 100vh;
-  grid-template-columns: 245px 1fr;
-  grid-template-rows: 85px 1fr;
-  grid-template-areas: "head head" "nav app";
-  grid-gap: 0;
-}
 
-
-//=========== APP HEADER ================
+//=========== 2. APP HEADER ================ (style headera appki)
 
 .app-header {
   grid-area: head;
@@ -60,7 +83,7 @@
 }
 
 
-//=========== APP NAV =================
+//=========== 3. APP NAV ================= (style nawigacji appki)
 .app-nav {
   grid-area: nav;
   background-color: $colorNav;
@@ -104,31 +127,69 @@
 }
 
 
-//=========== APP MAIN ================
+//=========== 4. APP MAIN ================ (ogolne style okien aplikacji)
 .app-main {
   grid-area: app;
   background-image: url("../images/app-background.png");
   padding: 30px 60px;
+  color: $colorNav;
 
   .main-container {
     width: 100%;
     height: 100%;
   }
 
+
   .main__screen {
     width: 100%;
     height: 100%;
-    visibility: hidden;
+    display: none;
   }
+
 
   .main__screen--visible {
-    visibility: visible;
+    display: block;
   }
 
+
+  // -------------- 4.1 Style okna newUser (pierwszy raz w aplikacji) ----
   .main__screen--newUser {
     background-color: $colorBackg;
     border: 1px dashed $colorTabText;
 
+    .newUser__content {
+      width: 407px;
+      margin: 80px auto auto auto;
+      justify-content: center;
+      text-align: center;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p:nth-of-type(1) {
+        font-size: 24px;
+      }
+
+      p:last-of-type {
+        font-size: 20px;
+      }
+    }
+
+    .newUser__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input[type='text'] {
+        width: 288px;
+        height: 30px;
+        font-size: 14px;
+        padding: 0 10px 0 10px;
+      }
+
+    }
   }
 }
 

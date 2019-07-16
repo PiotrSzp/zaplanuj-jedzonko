@@ -43,9 +43,22 @@
 -->
     <main class="app-main">
         <div class="main-container">
+            <!--  ===== FIRST ENTRY SCREEN START  =====  -->
             <div class="main__screen main__screen--newUser main__screen--visible" id="newUser">
-                <!-- tutaj ekran powitalny dla nowego uzytkownika-->
+                <div class="newUser__content">
+                    <h2>Witaj,</h2>
+                    <p><strong>wygląda na to że jesteś tutaj pierwszy raz!</strong></p>
+                    <form action="javascript:saveName()" name="userNameQuerry" class="newUser__form">
+                        <label for="userName" class="hidden-label">Podaj swoje imię</label>
+                        <input id="userName" type="text" name="userName" placeholder="tutaj wpisz jak masz na imię">
+                        <br>
+                        <button type="submit" class="btn btn--big" id="saveNameBtn">Gotowe!</button>
+                    </form>
+                    <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</p>
+                </div>
             </div>
+            <!--  ===== first entry screen end  =====  -->
+            <!--  ===== DASHBOARD SCREEN START  =====  -->
             <div class="main__screen main__screen--dashboard" id="dashboard">
                 <!-- tutaj glowny pulpit aplikacji-->
             </div>
@@ -57,7 +70,9 @@
             </div>
         </div>
     </main>
-<!--  ############ Glowny ekran applikacji - KONIEC  #############-->
+<!--
+############ Glowny ekran applikacji - KONIEC  #############
+-->
 
 </div>
 <script src="./js/app.js"></script>
