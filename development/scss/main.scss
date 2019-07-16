@@ -8,6 +8,7 @@ $colorWarn : #FFB03B;  // kolor wiadomości typu warning
 $colorSuccess : #468966;  // kolor wiadomości typu success
 $colorTrash : #BD4932;  // kolor ikony kosza
 $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
+&colorFocus: lightblue; //kolor po podświetleniu formularzy
 
 
 // CDN FONTAWESOME
@@ -21,15 +22,63 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
 
-
-
-
-
-
 body{
   background-color: $colorBackg;
 }
 
+.newsletter__container {
+  background: #4a4a49;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+}
+
+
+.newsletter__text {
+  h3 {
+  color: white;
+  font-size: 30px;
+  font-family: 'Open Sans';
+  letter-spacing: 1px;
+  }
+
+
+.newsletter__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  input {
+    width: 200px;
+    height: 30px;
+    padding: 0;
+    border: none;
+  }
+  
+  .newsletter__submit {
+    background: #FF6600;
+    border: none;
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    }
+  }
+
+  .newsletter__form > input {
+    &:focus {
+      background-color: $colorFocus;
+    }
+  }
+
+  .newsletter__submit {
+    &:focus {
+      border: 1px solid $colorFocus;
+    }
+  }
 
 .about__container {
   display: flex;
@@ -115,5 +164,6 @@ body{
           line-height: 25px;
 
         }
+  }
+  }
 
-}
