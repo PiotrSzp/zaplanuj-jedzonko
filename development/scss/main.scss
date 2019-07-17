@@ -28,7 +28,7 @@ $colorTabBorder: #CBCBCB; // kolor ramek w tabelach
 @font-face {
   font-family: 'charmonmanbold';
   src: url('../Fonts/charmonman-bold-webfont.woff2') format('woff2'),
-url('../Fonts/charmonman-bold-webfont.woff') format('woff');
+  url('../Fonts/charmonman-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,7 +36,7 @@ url('../Fonts/charmonman-bold-webfont.woff') format('woff');
 @font-face {
   font-family: 'charmonmanregular';
   src: url('../Fonts/charmonman-regular-webfont.woff2') format('woff2'),
-url('../Fonts/charmonman-regular-webfont.woff') format('woff');
+  url('../Fonts/charmonman-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,7 +44,7 @@ url('../Fonts/charmonman-regular-webfont.woff') format('woff');
 @font-face {
   font-family: 'open_sansbold';
   src: url('../Fonts/opensans-bold-webfont.woff2') format('woff2'),
-url('../Fonts/opensans-bold-webfont.woff') format('woff');
+  url('../Fonts/opensans-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -53,7 +53,7 @@ url('../Fonts/opensans-bold-webfont.woff') format('woff');
 @font-face {
   font-family: 'open_sans_lightregular';
   src: url('../Fonts/opensans-light-webfont.woff2') format('woff2'),
-url('../Fonts/opensans-light-webfont.woff') format('woff');
+  url('../Fonts/opensans-light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,10 +62,12 @@ url('../Fonts/opensans-light-webfont.woff') format('woff');
 @font-face {
   font-family: 'open_sansregular';
   src: url('../Fonts/opensans-regular-webfont.woff2') format('woff2'),
-url('../Fonts/opensans-regular-webfont.woff') format('woff');
+  url('../Fonts/opensans-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 body {
   background-color: $colorBackg;
@@ -87,6 +89,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
   }
+}
 
 
   .newsletter__form {
@@ -177,9 +180,12 @@ body {
     text-align: center;
   }
 
-  .box__text {
-    line-height: 25px;
-    text-align: center;
+
+.box__text {
+  line-height: 25px;
+  text-align: center;
+}
+
 
     .author__container {
       margin: 0 auto;
@@ -344,4 +350,6 @@ input {
 .www__footer {
     color: #E58A20;
 }
+
+
 
