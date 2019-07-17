@@ -8,7 +8,7 @@ $colorWarn : #FFB03B;  // kolor wiadomości typu warning
 $colorSuccess : #468966;  // kolor wiadomości typu success
 $colorTrash : #BD4932;  // kolor ikony kosza
 $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
-&colorFocus: lightblue; //kolor po podświetleniu formularzy
+$colorFocus: lightblue; //kolor po podświetleniu formularzy
 
 
 // CDN FONTAWESOME
@@ -21,6 +21,8 @@ $colorTabText : #A1A194;  // kolor tekstu z wierszy w tabelach, ikony rozszerzon
 @import "app";
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
+
+
 
 body{
   background-color: $colorBackg;
@@ -42,6 +44,7 @@ body{
   font-family: 'Open Sans';
   letter-spacing: 1px;
   }
+}
 
 
 .newsletter__form {
@@ -54,6 +57,7 @@ body{
     padding: 0;
     border: none;
   }
+}
   
   .newsletter__submit {
     background: #FF6600;
@@ -66,7 +70,7 @@ body{
     font-weight: 700;
     cursor: pointer;
     }
-  }
+  
 
   .newsletter__form > input {
     &:focus {
@@ -79,6 +83,7 @@ body{
       border: 1px solid $colorFocus;
     }
   }
+  
 
 .about__container {
   display: flex;
@@ -86,6 +91,7 @@ body{
   align-items: center;
   padding: 20px;
   font-family: 'Open Sans';
+  
 }
 .about__box {
   margin: 40px;
@@ -133,7 +139,7 @@ body{
 .box__text {
   line-height: 25px;
   text-align: center;
-=======
+}
 
 .author__container {
   margin: 0 auto;
@@ -165,5 +171,4 @@ body{
 
         }
   }
-  }
-
+  
