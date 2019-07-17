@@ -16,15 +16,18 @@
             <!-- ###################################################
              NAGLOWEK H1 DO POPRAWKI PO DOSTARCZENIU KODU OF OLI
              ###################################################-->
-            <h1 class="app-header__title">
-                <span id="first">Zaplanuj</span>
-                <span id="second">Jedzonko</span>
-            </h1>
-            <div class="app-header__user">
-                <div class="app-header__name" id="showName">Imię</div>
-                <i class="fas fa-user-circle"></i>
-            </div>
-        </header>
+
+
+        <h1 class="app-header__title">
+            <span id="first">Zaplanuj</span>
+            <span id="second">Jedzonko</span>
+        </h1>
+        <div class="app-header__user">
+            <div class="app-header__name" id="nameDisplay"></div>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
         <nav class="app-nav">
             <ul class="app-nav__list">
                 <li class="app-nav__item">
@@ -43,14 +46,28 @@
 ############ TU SIĘ ZACZYNA GLOWNY EKRAN APLIKACJI #############
 ################################################################
 -->
-        <main class="app-main">
-            <div class="main-container">
-                <div class="main__screen main__screen--newUser main__screen--visible" id="newUser">
-                    <!-- tutaj ekran powitalny dla nowego uzytkownika-->
+
+
+    <main class="app-main">
+        <div class="main-container">
+            <!--  ===== FIRST ENTRY SCREEN START  =====  -->
+            <div class="main__screen main__screen--newUser" id="newUser">
+                <div class="newUser__content">
+                    <h2>Witaj,</h2>
+                    <p><strong>wygląda na to że jesteś tutaj pierwszy raz!</strong></p>
+                    <form name="userNameQuerry" class="newUser__form">
+                        <label for="userName" class="hidden-label">Podaj swoje imię</label>
+                        <input id="userName" type="text" name="userName" placeholder="tutaj wpisz jak masz na imię">
+                        <br>
+                        <button type="submit" class="btn btn--big" id="saveNameBtn">Gotowe!</button>
+                    </form>
+                    <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</p>
                 </div>
-                <div class="main__screen main__screen--dashboard" id="dashboard">
-                    <!-- tutaj glowny pulpit aplikacji-->
-                    <div class="week__plan__container">
+            </div>
+            <!--  ===== first entry screen end  =====  -->
+            <!--  ===== DASHBOARD SCREEN START  =====  -->
+            <div class="main__screen main__screen--dashboard" id="dashboard">
+                <div class="week__plan__container">
                         <div class="week__plan__header">
                             <h3>Twój plan na {nr_tygodnia} tydzień:</h3>
                         </div>
@@ -140,18 +157,21 @@
                     </div>
 
                 </div>
-                <div class="main__screen main__screen--addRecipe" id="addRecipe">
-                    <!-- tutaj panel dodawania/edycji przepisu-->
-                </div>
-                <div class="main__screen main__screen--addSchedule" id="addSchedule">
-                    <!-- tutaj panel dodawania/edycji planu-->
-                </div>
             </div>
-        </main>
-        <!--  ############ Glowny ekran applikacji - KONIEC  #############-->
+            <div class="main__screen main__screen--addRecipe" id="addRecipe">
+                <!-- tutaj panel dodawania/edycji przepisu-->
+            </div>
+            <div class="main__screen main__screen--addSchedule" id="addSchedule">
+                <!-- tutaj panel dodawania/edycji planu-->
+            </div>
+        </div>
+    </main>
+<!--
+############ Glowny ekran applikacji - KONIEC  #############
+-->
 
-    </div>
-    <script src="./js/app.js"></script>
+</div>
+<script src="./js/app.js" defer></script>
 </body>
 
 </html>
