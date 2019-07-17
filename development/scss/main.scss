@@ -9,6 +9,7 @@ $colorSuccess: #468966; // kolor wiadomości typu success
 $colorTrash: #BD4932; // kolor ikony kosza
 $colorTabText: #A1A194; // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
 $colorFocus: #add8e6; //kolor po podświetleniu formularzy
+$colorTabBorder: #CBCBCB; // kolor ramek w tabelach
 
 
 // CDN FONTAWESOME
@@ -16,10 +17,18 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 //
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+@import "app";
+@import "saved-lists";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/regular.scss";
+
+
 @font-face {
   font-family: 'charmonmanbold';
   src: url('../Fonts/charmonman-bold-webfont.woff2') format('woff2'),
-  url('../Fonts/charmonman-bold-webfont.woff') format('woff');
+url('../Fonts/charmonman-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +36,7 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 @font-face {
   font-family: 'charmonmanregular';
   src: url('../Fonts/charmonman-regular-webfont.woff2') format('woff2'),
-  url('../Fonts/charmonman-regular-webfont.woff') format('woff');
+url('../Fonts/charmonman-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,7 +44,7 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 @font-face {
   font-family: 'open_sansbold';
   src: url('../Fonts/opensans-bold-webfont.woff2') format('woff2'),
-  url('../Fonts/opensans-bold-webfont.woff') format('woff');
+url('../Fonts/opensans-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,7 +53,7 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 @font-face {
   font-family: 'open_sans_lightregular';
   src: url('../Fonts/opensans-light-webfont.woff2') format('woff2'),
-  url('../Fonts/opensans-light-webfont.woff') format('woff');
+url('../Fonts/opensans-light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -53,15 +62,10 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 @font-face {
   font-family: 'open_sansregular';
   src: url('../Fonts/opensans-regular-webfont.woff2') format('woff2'),
-  url('../Fonts/opensans-regular-webfont.woff') format('woff');
+url('../Fonts/opensans-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
-
-@import "app";
-@import "fontawesome/fontawesome.scss";
-@import "fontawesome/solid.scss";
-@import "fontawesome/regular.scss";
 
 body {
   background-color: $colorBackg;
@@ -340,6 +344,4 @@ input {
 .www__footer {
     color: #E58A20;
 }
-
-
 
