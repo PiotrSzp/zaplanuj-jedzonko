@@ -1,5 +1,4 @@
 //======== COLORS ========
-
 $colorNav: #5B605F; // panel boczny, nawigacja
 $colorText: #4a4a49; // nagłówek, , kolor tekstu w kolumnach
 $colorOrange: #FF6600; // przyciski, wyróżnienia, nagłówki ekranów
@@ -10,7 +9,7 @@ $colorSuccess: #468966; // kolor wiadomości typu success
 $colorTrash: #BD4932; // kolor ikony kosza
 $colorTabText: #A1A194; // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
 $colorFocus: #add8e6; //kolor po podświetleniu formularzy
-
+$colorTabBorder: #CBCBCB; // kolor ramek w tabelach
 
 
 // CDN FONTAWESOME
@@ -18,6 +17,14 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
 //
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+@import "app";
+@import "saved-lists";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/regular.scss";
+
+
 @font-face {
   font-family: 'charmonmanbold';
   src: url('../Fonts/charmonman-bold-webfont.woff2') format('woff2'),
@@ -60,14 +67,9 @@ $colorFocus: #add8e6; //kolor po podświetleniu formularzy
   font-style: normal;
 }
 
-@import "app";
-@import "fontawesome/fontawesome.scss";
-@import "fontawesome/solid.scss";
-@import "fontawesome/regular.scss";
 
 
 body {
-
   background-color: $colorBackg;
 }
 
@@ -90,32 +92,30 @@ body {
 }
 
 
+  .newsletter__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 
-.newsletter__form {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  input {
-    width: 200px;
-    height: 30px;
-    padding: 0;
-    border: none;
+    input {
+      width: 200px;
+      height: 30px;
+      padding: 0;
+      border: none;
+    }
+
+    .newsletter__submit {
+      background: #FF6600;
+      border: none;
+      width: 150px;
+      height: 30px;
+      padding: 0;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
   }
-}
-  
-  .newsletter__submit {
-    background: #FF6600;
-    border: none;
-    width: 150px;
-    height: 30px;
-    padding: 0;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    cursor: pointer;
-
- }
-  
 
   .newsletter__form > input {
     &:focus {
@@ -128,8 +128,6 @@ body {
       border: 1px solid $colorFocus;
     }
   }
-  
-
 
   .about__container {
     display: flex;
@@ -138,7 +136,6 @@ body {
     padding: 20px;
     font-family: 'Open Sans';
   }
-
 
   .about__box {
     margin: 40px;
@@ -221,7 +218,6 @@ body {
       }
     }
   }
-
 }
 
 
@@ -354,5 +350,6 @@ input {
 .www__footer {
     color: #E58A20;
 }
+
 
 
