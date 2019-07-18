@@ -1,28 +1,58 @@
+//=========== 1. APP ================ (ogolne style dla całej apki)
+
 .app-body {
   font-family: 'Open Sans', Arial, sans-serif;
   color: #ffffff;
   margin: 0;
   padding: 0;
 
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
+
+
+  .app-container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 245px 1fr;
+    grid-template-rows: 85px calc(100vh - 85px);
+    grid-template-areas: "head head" "nav app";
+    grid-gap: 0;
+  }
+
+  .hidden-label {
+    position: absolute;
+    left: -99999999999999px;
+  }
+
+  .btn { // ~~~~~~~~~~ BUTTONY ~~~~~~~~~
+    display: block;
+    background-color: $colorOrange;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &--big {
+      width: 126px;
+      height: 38px;
+    }
+
+    &--fontawesome {
+      background-color: transparent;
+      width: auto;
+      height: auto;
+    }
+  }
 }
 
-.app-container {
-  display: grid;
-  width: 100%;
-  height: 100vh;
-  grid-template-columns: 245px 1fr;
-  grid-template-rows: 85px 1fr;
-  grid-template-areas: "head head" "nav app";
-  grid-gap: 0;
-}
 
-
-//=========== APP HEADER ================
+//=========== 2. APP HEADER ================ (style headera appki)
 
 .app-header {
   grid-area: head;
@@ -34,13 +64,18 @@
   padding-right: 42px;
   box-shadow: inset 0 -8px 10px -10px black;
 
-  .app-header__title {
-  }
+  // .app-header__title {
+  // }
 
   .app-header__user {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
 
     i {
       font-size: 42px;
@@ -60,15 +95,15 @@
 }
 
 
-//=========== APP NAV =================
+//=========== 3. APP NAV ================= (style nawigacji appki)
 .app-nav {
   grid-area: nav;
   background-color: $colorNav;
 }
 
-.app-nav__item {
+// .app-nav__item {
 
-}
+// }
 
 .app-nav__link {
   display: block;
@@ -104,34 +139,167 @@
 }
 
 
-//=========== APP MAIN ================
+//=========== 4. APP MAIN ================ (ogolne style okien aplikacji)
 .app-main {
   grid-area: app;
   background-image: url("../images/app-background.png");
   padding: 30px 60px;
+  color: $colorNav;
 
   .main-container {
     width: 100%;
     height: 100%;
   }
 
+
   .main__screen {
     width: 100%;
     height: 100%;
-    visibility: hidden;
+    display: none;
   }
+
 
   .main__screen--visible {
-    visibility: visible;
+    display: block;
   }
 
+
+  // -------------- 4.1 Style okna newUser (pierwszy raz w aplikacji) ----
   .main__screen--newUser {
     background-color: $colorBackg;
     border: 1px dashed $colorTabText;
 
+    .newUser__content {
+      width: 407px;
+      margin: 80px auto auto auto;
+      justify-content: center;
+      text-align: center;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p:nth-of-type(1) {
+        font-size: 24px;
+      }
+
+      p:last-of-type {
+        font-size: 20px;
+      }
+    }
+
+    .newUser__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input[type='text'] {
+        width: 288px;
+        height: 30px;
+        font-size: 14px;
+        padding: 0 10px 0 10px;
+      }
+
+    }
+  }
+
+
+  // -------------- 4.2 Style okna dashboard (powracający do aplikacji) ----
+
+
+  .week__plan__container {
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .week__plan__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      color: #FF6600;
+    }
+  }
+
+  .week__plan {
+    //visibility: visible;
+    width: 90%;
+  }
+
+  .week__plan__table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  thead {
+    font-size: 20px;
+    font-weight: 700;
+
+    .table__header {
+      border-top: 1px solid #A1A194;
+      border-bottom: 1px solid #A1A194;
+    }
+
+    td {
+      color: black;
+      padding: 10px;
+    }
+  }
+
+  .food__plan {
+    font-size: 15px;
+
+    tr {
+      border-bottom: 1px solid #A1A194;
+    }
+
+    td {
+      color: #A1A194;
+      padding: 10px;
+    }
+  }
+
+
+  .switch__buttons {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .button_previous, .button_next {
+      border: none;
+      background-color: #FFFFFA;
+      color: #FF6600;
+      font-weight: 600;
+    }
+  }
+
+  .switch__buttons {
+    .arrow_left {
+      border: 1px solid #FF6600;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+
+    .arrow_right {
+      border: 1px solid #FF6600;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
   }
 }
-
-
-
-

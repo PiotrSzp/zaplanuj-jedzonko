@@ -11,15 +11,11 @@
 <body class="app-body">
 <div class="app-container">
     <header class="app-header">
-        <!-- ###################################################
-             NAGLOWEK H1 DO POPRAWKI PO DOSTARCZENIU KODU OF OLI
-             ###################################################-->
-        <h1 class="app-header__title">
-            <span id="first">Zaplanuj</span>
-            <span id="second">Jedzonko</span>
-        </h1>
+        <div class="logo__container">
+            <h1 class="logo__header">Zaplanuj<span class="logo__header logo__second__word">Jedzonko</span></h1>
+        </div>
         <div class="app-header__user">
-            <div class="app-header__name" id="showName">Imię</div>
+            <div class="app-header__name" id="nameDisplay"></div>
             <i class="fas fa-user-circle"></i>
         </div>
     </header>
@@ -43,11 +39,113 @@
 -->
     <main class="app-main">
         <div class="main-container">
-            <div class="main__screen main__screen--newUser main__screen--visible" id="newUser">
-                <!-- tutaj ekran powitalny dla nowego uzytkownika-->
+            <!--  ===== FIRST ENTRY SCREEN START  =====  -->
+            <div class="main__screen main__screen--newUser" id="newUser">
+                <div class="newUser__content">
+                    <h2>Witaj,</h2>
+                    <p><strong>wygląda na to że jesteś tutaj pierwszy raz!</strong></p>
+                    <form name="userNameQuerry" class="newUser__form">
+                        <label for="userName" class="hidden-label">Podaj swoje imię</label>
+                        <input id="userName" type="text" name="userName" placeholder="tutaj wpisz jak masz na imię">
+                        <br>
+                        <button type="submit" class="btn btn--big" id="saveNameBtn">Gotowe!</button>
+                    </form>
+                    <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</p>
+                </div>
             </div>
+            <!--  ===== first entry screen end  =====  -->
+            <!--  ===== DASHBOARD SCREEN START  =====  -->
             <div class="main__screen main__screen--dashboard" id="dashboard">
-                <!-- tutaj glowny pulpit aplikacji-->
+                <div class="week__plan__container">
+                        <div class="week__plan__header">
+                            <h3>Twój plan na {nr_tygodnia} tydzień:</h3>
+                        </div>
+                        <div class="week__plan">
+                            <table class="week__plan__table">
+
+                                <thead>
+                                    <tr class="table__header">
+                                        <td class="day-name1">Poniedziałek</td>
+                                        <td class="day-name2">Wtorek</td>
+                                        <td class="day-name3">Środa</td>
+                                        <td class="day-name4">Czwartek</td>
+                                        <td class="day-name5">Piątek</td>
+                                        <td class="day-name6">Sobota</td>
+                                        <td class="day-name7">Niedziela</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="food__plan">
+                                    <tr class="meal1">
+                                        <td class="day1__meal1">Śniadanie</td>
+                                        <td class="day2__meal1">Śniadanie</td>
+                                        <td class="day3__meal1">Śniadanie</td>
+                                        <td class="day4__meal1">Śniadanie</td>
+                                        <td class="day5__meal1">Śniadanie</td>
+                                        <td class="day6__meal1">Śniadanie</td>
+                                        <td class="day7__meal1">Śniadanie</td>
+
+                                    </tr>
+                                    <tr class="meal2">
+                                        <td class="day1__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day2__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day3__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day4__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day5__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day6__meal2">Drugie<br>śniadanie</td>
+                                        <td class="day7__meal2">Drugie<br>śniadanie</td>
+
+                                    </tr>
+                                    <tr class="meal3">
+                                        <td class="day1__meal3">Zupa</td>
+                                        <td class="day2__meal3">Zupa</td>
+                                        <td class="day3__meal3">Zupa</td>
+                                        <td class="day4__meal3">Zupa</td>
+                                        <td class="day5__meal3">Zupa</td>
+                                        <td class="day6__meal3">Zupa</td>
+                                        <td class="day7__meal3">Zupa</td>
+
+                                    </tr>
+                                    <tr class="meal4">
+                                        <td class="day1__meal4">Drugie<br>danie</td>
+                                        <td class="day2__meal4">Drugie<br>danie</td>
+                                        <td class="day3__meal4">Drugie<br>danie</td>
+                                        <td class="day4__meal4">Drugie<br>danie</td>
+                                        <td class="day5__meal4">Drugie<br>danie</td>
+                                        <td class="day6__meal4">Drugie<br>danie</td>
+                                        <td class="day7__meal4">Drugie<br>danie</td>
+
+                                    </tr>
+                                    <tr class="meal5">
+                                        <td class="day1__meal5">Kolacja</td>
+                                        <td class="day2__meal5">Kolacja</td>
+                                        <td class="day3__meal5">Kolacja</td>
+                                        <td class="day4__meal5">Kolacja</td>
+                                        <td class="day5__meal5">Kolacja</td>
+                                        <td class="day6__meal5">Kolacja</td>
+                                        <td class="day7__meal5">Kolacja</td>
+
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                        <div class="week__plan__container switch__buttons">
+                            <div class="switch__previous">
+                                <i class="arrow_left"></i>
+                                <i class="arrow_left"></i>
+                                <button class="button_previous">poprzedni</button>
+                            </div>
+                            <div class="switch__next">
+                                <button class="button_next">następny</button>
+                                <i class="arrow_right"></i>
+                                <i class="arrow_right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="main__screen main__screen--addRecipe" id="addRecipe">
                 <!-- tutaj panel dodawania/edycji przepisu-->
@@ -57,10 +155,12 @@
             </div>
         </div>
     </main>
-<!--  ############ Glowny ekran applikacji - KONIEC  #############-->
+<!--
+############ Glowny ekran applikacji - KONIEC  #############
+-->
 
 </div>
-<script src="./js/app.js"></script>
+<script src="./js/app.js" defer></script>
 </body>
 </html>
 
