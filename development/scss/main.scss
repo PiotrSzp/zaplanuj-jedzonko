@@ -23,6 +23,7 @@ $colorTabBorder: #CBCBCB; // kolor ramek w tabelach
 @import "fontawesome/fontawesome.scss";
 @import "fontawesome/solid.scss";
 @import "fontawesome/regular.scss";
+@import "fontawesome/brands.scss";
 
 
 @font-face {
@@ -91,93 +92,93 @@ body {
 }
 
 
-.newsletter__form {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  .newsletter__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 
-  input {
-    width: 200px;
-    height: 30px;
-    padding: 0;
-    border: none;
+    input {
+      width: 200px;
+      height: 30px;
+      padding: 0;
+      border: none;
+    }
+
+    .newsletter__submit {
+      background: #FF6600;
+      border: none;
+      width: 150px;
+      height: 30px;
+      padding: 0;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  .newsletter__form > input {
+    &:focus {
+      background-color: $colorFocus;
+    }
   }
 
   .newsletter__submit {
-    background: #FF6600;
-    border: none;
-    width: 150px;
-    height: 30px;
-    padding: 0;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    cursor: pointer;
+    &:focus {
+      border: 1px solid $colorFocus;
+    }
   }
-}
 
-.newsletter__form > input {
-  &:focus {
-    background-color: $colorFocus;
+  .about__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Open Sans';
   }
-}
 
-.newsletter__submit {
-  &:focus {
-    border: 1px solid $colorFocus;
+  .about__box {
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4a4a49;
+
   }
-}
 
-.about__container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  font-family: 'Open Sans';
-}
+  .box__image--check {
+    height: 60px;
+    width: 60px;
 
-.about__box {
-  margin: 40px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: #4a4a49;
-
-}
-
-.box__image--check {
-  height: 60px;
-  width: 60px;
-
-  i {
-    font-size: 60px;
+    i {
+      font-size: 60px;
+    }
   }
-}
 
 
-.box__image--clock {
-  height: 60px;
-  width: 60px;
+  .box__image--clock {
+    height: 60px;
+    width: 60px;
 
-  i {
-    font-size: 60px;
+    i {
+      font-size: 60px;
+    }
   }
-}
 
-.box__image--menu {
-  height: 60px;
-  width: 60px;
+  .box__image--menu {
+    height: 60px;
+    width: 60px;
 
-  i {
-    font-size: 60px;
+    i {
+      font-size: 60px;
+    }
   }
-}
 
-.about__box > h1 {
-  text-align: center;
-}
+  .about__box > h1 {
+    text-align: center;
+  }
 
 
 .box__text {
@@ -193,30 +194,59 @@ body {
   display: flex;
   justify-content: space-around;
 
-
-  .author__picture {
-    margin: 40px 0;
-    background: #4a4a49;
-    width: 300px;
-    height: 300px;
-  }
-
-  .author__info {
-    margin: 40px 0;
-    width: 40%;
-    color: #4a4a49;
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 40px;
+    .author__picture {
+      margin: 40px 0;
+      background: #4a4a49;
+      width: 300px;
+      height: 300px;
     }
 
-    .author__info--text {
-      line-height: 25px;
+    .author__info {
+      margin: 40px 0;
+      width: 40%;
+      color: #4a4a49;
 
+      h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+
+      .author__info--text {
+        line-height: 25px;
+
+      }
     }
   }
 }
+
+
+
+.section__call{
+  margin: 0;
+  background: #5B5C5B;
+  width: 100%;
+  height: 200px;
+  display: flex;
+
+  justify-content: space-between;
+
+}
+.section__call_text{
+  box-sizing: border-box;
+  justify-content:center;
+  color: #EBEBEB;
+  padding: 50px;
+}
+.button__call_action{
+  background: #F2652D;
+  color:#EBEBEB;
+  box-sizing: border-box;
+
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  margin-right: 50px;
+} 
 
 
 .header__container {
@@ -272,9 +302,125 @@ body {
 
 }
 
-//.footer__top__container {
-//  height: 200px;
-//}
+
+.slides {
+    background: #EBEBEB; 
+
+    padding: 0;
+    width: 100%;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * { //compatibility to another browsers
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 400px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+   
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 400px;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 2px; //position on dots 
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3
+ {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
 
 .footer__big__container {
   background-color: #4a4a49;
@@ -330,7 +476,6 @@ body {
     margin: 0;
     text-align: center
   }
-
 }
 
 .footer__media {
@@ -356,11 +501,13 @@ body {
   background-color: (#464646);
   text-align: center;
   padding: 15px;
+  margin: 0;
 }
 
 .www__footer {
   color: #E58A20;
 }
+
 
 
 

@@ -150,6 +150,50 @@
             <!--  ===== ADD / EDIT RECIPE SCREEN START  =====  -->
             <div class="main__screen main__screen--addRecipe" id="addRecipe">
                 <!-- tutaj panel dodawania/edycji przepisu-->
+
+                <div class="main__recipes-header">
+                    <h2 class="main__recipes-h2">NOWY PRZEPIS</h2>
+                    <button class="main__recipes-button">Zapisz i zamknij</button>
+                </div>
+                    <hr>
+                <form>
+                        
+                    <div class="main__recipes-info"> 
+                        <label>Nazwa przepisu</label>                  
+                        <textarea name="name" 
+                        id="main__recipes-text-name" cols="80" rows="1" ></textarea>
+                            <br>
+                            <label>Opis przepisu</label>
+                            
+                            <textarea name="description"
+                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
+                              
+                    </div>
+                    <div class="main__recipes-lists">
+                           
+                        <div class="main__recipes_add">
+                            <label>INSTRUKCJE</label>
+                            <hr> 
+                            
+                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
+                            <i class="fas fa-plus-square  fa-plus-instruction"></i>
+                            <ol class="main__screen_order-list">
+                                                        
+                            </ol>
+                        </div>
+                        
+                        <div class="main__recipes_add">
+                            <label>SKŁADNIKI</label>
+                            <hr>
+                            <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
+                            <i class="fas fa-plus-square fa-plus-component"></i>
+                            <ul class="main__screen_unorder-list">
+                                                                
+                            </ul>                           
+                        </div>
+                            
+                    </div>
+                </form>
             </div>
             <!--  ===== add / edit recipe screen end    =====  -->
             <!--  ==== ADD / EDIT SCHEDULE SCREEN START ===== -->
@@ -200,4 +244,9 @@
 <script src="./js/app.js" defer></script>
 </body>
 </html>
+
+
+
+
+
 

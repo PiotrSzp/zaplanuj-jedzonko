@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const addRecipeBtn = document.querySelector("#addRecipeBtn");
 
+    // =============================||================================
+    // ====== DEFINICJE FUNKCJI ===\||/===============================
+    // =============================\/================================
 
 
     // =======================================||======================
@@ -165,3 +168,185 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+
+//// TUTAJ SĄ FRAGMENTY KODU KTÓREGO JESZCZE NIE UŻYŁEM 
+  /* 
+   Metoda `.showInfo()` 
+   wyświetlająca w konsoli wszystkie informacje o przepisie */
+   Recipe.prototype.showInfo = function() {
+    console.warn(this.id, this.title); // wyświetl id oraz tytuł
+    console.warn(this.description); // wyświetl opis
+    this.ingredients.map(function(elem, i) {
+      console.warn(i, elem); // wyświetl każdy element
+    })
+    this.instructions.map(function(elem, i) {
+      console.warn(i, elem); // wyświetl każdy element
+    })
+  }
+  
+  /* 
+  Metoda `.saveToLocalStorage()` 
+  zapisująca do localStorage informacje o przepisie */
+  Recipe.prototype.saveToLocalStorage = function() {
+
+    allRecipies;
+    /* if(){
+        // uzupełnij
+      }else{
+        // uzupełnij
+      } */
+  }
+  
+ 
+  
+  
+  // utworzenie kilku przykładowych przepisów 
+  /*
+  var newRecipe1 = new Recipe(allRecipies.length + 1, "Jajecznica na boczku", "Taką jajecznicę lubie najbardziej ;p ");
+  allRecipies.push(newRecipe1); // dodanie przepisu do globalnej tablicy
+  var newRecipe2 = new Recipe(allRecipies.length + 1, "Fasolka po bretońsku", "Taka fasolka że kołdrę podnosi!");
+  allRecipies.push(newRecipe2);
+  var newRecipe3 = new Recipe(allRecipies.length + 1, "Sałatka grecka", "Oryginalna sałatka grecka z pomidora, ogórka, czerwonej cebuli i czarnych oliwek, z oliwą i oregano. ");
+  allRecipies.push(newRecipe3);
+  */
+  // dodawanie składników do przepisu (newRecipe1, allRecipies[0])
+  /*
+  newRecipe1.ingredients.push("3 jajka"); 
+  newRecipe1.ingredients.push("mała cebula"); 
+  newRecipe1.ingredients.push("szczypiorek"); 
+  newRecipe1.ingredients.push("5 plasterków boczku"); 
+  
+  newRecipe1.instructions.push("Rozpuść masło na patelni i podgrzej.");
+  newRecipe1.instructions.push("Dodaj boczek."); 
+  newRecipe1.instructions.push("Na rozgrzaną patelnię wbij jajaka i mieszaj doprawiając."); 
+  newRecipe1.instructions.push("Podawaj z grzankami. Smacznego!"); 
+  */
+  
+//-----------------------------------------------------------------------------------
+  /*  PRZEPIS 
+    Ten plik zawiera implementację obiektu reprezentującego przepis, jego medoty oraz pola obiektu. Na końcu sposób użycia, polacam odpalić konsolę ;p 
+
+    Recipe(id,title,description) 
+    id           - int, identyfikator przepisu
+    title        - string, nazwa przepisu 
+    description  - string, opis przepisu
+    ingredients  - array, składniki przepisu
+    instructions - array, instrukcje przepisu 
+*/
+
+  function Recipe(id, title, description) {
+    this.id = id; // id przepisu
+    this.title = title; // nazwa przepisu
+    this.description = description; // opis przepisu
+    this.ingredients = []; // składniki przepisu
+    this.instructions = []; // instrukcje przepisu
+  }
+   // przygotowanie globalnej zmiennej przechowującej wszystkie przepisy
+  var allRecipies = [];
+
+  const nameRecipes = document.querySelector("#main__recipes-text-name");
+  const discRecipes = document.querySelector("#main__recipes-txt-discription");
+  ///^ Textarea's jeden z nazwą drugi z opisem raczej widać który to który ;) 
+
+  const indexComponent = document.querySelector("#main__recipes-component");
+  const indexInstruction = document.querySelector("#main__recipes-instruction");
+  ///^ To są Textarea's z dodawaniem składników i intrukcji
+
+  const addOrderList = document.querySelector(".main__screen_order-list"); 
+  const addUnorderList = document.querySelector(".main__screen_unorder-list"); 
+  ///^ To są te listy z scrolami w których znajdują się składniki i instrukcja krok po kroku
+
+  const addButtonRecipes = document.querySelector(".main__recipes-button");
+  ///^ przycisk Zapisz i zamknij
+
+  const addComponent = document.querySelector(".fa-plus-component");
+  const addInstruction = document.querySelector(".fa-plus-instruction");
+  ///^ To są przyciski dodające produkt do listy oraz kroki instrukcji
+
+  
+////f-cja sprawdzajaca czy cos jest nie pełne (niestety sprawdza tylko nazwę i opis :/)
+  const addAllElements = function(e){
+      e.preventDefault();
+    let emptyElement ="";
+    if(addUnorderList.value !== "" &&
+        addOrderList.value !== "" &&  
+        discRecipes.value !== ""&&
+        nameRecipes.value !== ""){
+        ///tworzy nowy objekt
+            newRecipe = new Recipe(allRecipies.length + 1, nameRecipes.value,
+                discRecipes.value);
+        ///i iteruje po listach dodajac do objektu    
+            for(let el of addOrderList.children){
+                newRecipe.ingredients.push(el);
+            }
+
+            for(let el of addUnorderList.children){
+                newRecipe.instructions.push(el); 
+            }
+        ///wypycha do globalnej zmiennej przepis   
+            allRecipies.push(newRecipe); 
+            console.log(newRecipe);
+
+            //!!tutaj przeba dodać funkcję chowającą dodawanie przepisu!!!!!!
+
+
+
+
+
+
+
+    }else{
+        console.log("Czegos brakuje!");
+    }
+  }
+
+ ////f-cja dodająca składniki do listy 
+  const saveComponent = function (e) {
+    e.preventDefault();
+    
+    if (indexComponent.value !== "") {
+        const el = document.createElement("li");
+        el.innerText = indexComponent.value;
+        addUnorderList.appendChild(el);
+         
+    } else {
+        indexComponent.placeholder = 'Musisz podać jakiś produkt';
+        
+    }
+  }
+
+  ////f-cja dodająca kroki do listy instrukcji 
+    const saveInstruction = function (e) {
+        e.preventDefault();
+        
+        if (indexInstruction.value !== "") {
+            const el = document.createElement("li");
+            el.innerText = indexInstruction.value;
+            addOrderList.appendChild(el);
+           
+        } else {
+            indexInstruction.placeholder = 'Musisz jakąś instrukcję';
+            
+        }
+
+    console.log('hello');
+
+    }
+
+addComponent.addEventListener('click',saveComponent ); // event dodawania do listy 
+addInstruction.addEventListener('click',saveInstruction );// event dodawania do listy
+addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
+
+    
+
+    if (window.location.pathname === "/app.html") {
+        const clrBtn = document.querySelector("#wyczysc");
+        clrBtn.addEventListener('click', xxx)
+    }
+
+
+
+
+
