@@ -71,6 +71,8 @@ $colorTabBorder: #CBCBCB; // kolor ramek w tabelach
 
 body {
   background-color: $colorBackg;
+  margin: 0;
+  padding: 0;
 }
 
 .newsletter__container {
@@ -217,7 +219,7 @@ body {
       }
     }
   }
-}
+
 
 
 
