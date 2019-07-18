@@ -1,3 +1,4 @@
+
 //=========== 1. APP ================ (ogolne style dla całej apki)
 
 .app-body {
@@ -203,6 +204,62 @@
 
     }
   }
+//------------------- 4.1 Dodawanie przepisu
+
+
+.main__recipes-header{
+  margin-bottom:  -20px;
+  display: flex;
+  justify-content: space-between;
+}
+.main__recipes-h2{
+  box-sizing: border-box;
+  color: $colorOrange;
+  
+}
+.main__recipes-button{
+  height: 50px;
+  width: 180px;
+  background: $colorOrange;
+  color: $colorBackg;
+  font-size: 20px;
+  
+}
+//---
+
+
+
+.main__recipes-info{
+ 
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0 10px;
+}
+//---
+.main__recipes-lists{
+  display: flex;  
+}
+
+.main__recipes_add{
+  flex-direction: column;
+  position: relative;
+  height: 50px;
+  margin:auto;
+  width: 48%;
+  i{position: absolute;
+    
+    margin: 5px;
+    color: #468966;
+    font-size: 32px;
+  }
+}
+
+.main__screen_order-list,
+.main__screen_unorder-list{
+  margin: 0;
+  max-height:150px;
+  overflow-y: scroll;
+}
 
 
   // -------------- 4.2 Style okna dashboard (powracający do aplikacji) ----
@@ -303,3 +360,7 @@
     }
   }
 }
+
+
+
+
