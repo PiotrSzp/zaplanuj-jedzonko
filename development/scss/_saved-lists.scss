@@ -1,0 +1,134 @@
+// -------------- 4.4 (?) Style okna recipes (pozostałe style aplikacji w pliku _app.scss) ----
+.no-recipe-warn {
+  margin: 50px 150px;
+  padding: 20px;
+  width: auto;
+  border: 4px dotted $colorWarn;
+  color: $colorWarn;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.main__screen--list {
+  background-color: $colorBackg;
+  border: 1px dashed $colorTabText;
+  padding: 24px 36px;
+  box-sizing: border-box;
+
+  .list__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    font-size: 30px;
+    border-bottom: 3px solid $colorTabBorder;
+    margin-bottom: 16px;
+
+    button {
+      color: $colorSuccess;
+      font-size: 32px;
+    }
+  }
+
+  .list__table-head {
+    height: 55px;
+    flex-shrink: 0;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $colorTabBorder;
+    border-top: 1px solid $colorTabBorder;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .list__table-head--recipes div {
+    margin-right: 5px;
+    flex-shrink: 0;
+
+    &:nth-of-type(1) {
+      flex-basis: 70px;
+    }
+
+    &:nth-of-type(2) {
+      flex-basis: 240px;
+    }
+
+    &:nth-of-type(3) {
+      flex-shrink: 1;
+      flex-grow: 1;
+    }
+
+    &:nth-of-type(4) {
+      flex-basis: 120px;
+      margin-right: 0;
+    }
+  }
+
+  .list__wraper {
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  .list__table-body {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0 0 0 10px;
+    margin-right: 10px;
+    color: $colorTabText;
+  }
+
+  .list__row {
+    display: flex;
+    padding: 10px 0 10px 10px;
+    max-width: calc(100% - 25px);
+    border-bottom: 1px solid  $colorTabBorder;
+  }
+
+  .list__row--recipies div {
+    margin-right: 5px;
+    flex-shrink: 0;
+
+    &:nth-of-type(1) {
+      flex-basis: 70px;
+    }
+
+    &:nth-of-type(2) {
+      flex-basis: 240px;
+    }
+
+    &:nth-of-type(3) {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    &:nth-of-type(4) {
+      flex-basis: 90px;
+      margin-right: 0;
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  .fa-trash-alt {
+    color: $colorTrash;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .fa-edit {
+    color: $colorWarn;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+}

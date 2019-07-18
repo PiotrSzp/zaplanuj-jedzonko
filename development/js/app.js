@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameDisplay = document.getElementById('nameDisplay');
 
 
-
-
     // =============================||================================
     // ====== DEFINICJE FUNKCJI ===\||/===============================
     // =============================\/================================
@@ -25,21 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const hideAll = function () {
         for (const el of mainScreensAll) {
             el.classList.remove('main__screen--visible');
-            console.log(el);
         }
     };
 
-    // ### f-cja (IIFE) sprawdzająca, czy jest zapisane imię i renderująca odpowiednio stronę
+    // ### f-cja sprawdzająca, czy jest zapisane imię i renderująca odpowiednio stronę
     const isNew = function () {
-        hideAll();
         if (localStorage.userName === null || localStorage.userName === undefined) {
-            nameDisplay.innerText = "Podaj imię w formularzu poniżej";
-            newUserDiv.classList.add('main__screen--visible');
+            nameDisplay.innerHTML = '<a href="../app.html">Podaj imię</a>';
         } else {
-            dashboardDiv.classList.add('main__screen--visible');
             nameDisplay.innerText = localStorage.userName;
         }
-        console.log('lol');
+
+        if (window.location.pathname === "/app.html") {
+            if (localStorage.userName === null || localStorage.userName === undefined) {
+                newUserDiv.classList.add('main__screen--visible');
+            } else {
+                dashboardDiv.classList.add('main__screen--visible');
+            }
+        }
+
     };
     isNew();
 
@@ -51,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (userNameInpt.value !== "") {
             name = userNameInpt.value;
             localStorage.setItem('userName', name);
+            hideAll();
             isNew();
         } else {
             userNameInpt.style.borderColor = '#ff0000';
             userNameInpt.placeholder = 'Musisz podać imię! Chociaż jedną literkę!';
         }
-        console.log('hello');
     };
 
 
@@ -64,9 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // ====== DODAWANIE EVENT LISTENERÓW ===\||/======================
     // ======================================\/=======================
 
-    saveNameBtn.addEventListener('click', saveName);
 
+    // ---- na stronie '/app.html' --------
+    if (window.location.pathname === "/app.html") {
+        saveNameBtn.addEventListener('click', saveName);
+    }
 
+    // ---- na stronie '/recipe.html'------
+    if (window.location.pathname === "/recipe.html") {
+        // tutaj kod
+    }
 
 
 
@@ -80,16 +89,21 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.clear();
         location.reload();
     };
+    if (window.location.pathname === "/app.html") {
+        const clrBtn = document.querySelector("#wyczysc");
+        clrBtn.addEventListener('click', xxx)
+    }
 
-    const clrBtn = document.querySelector("#wyczysc");
-    clrBtn.addEventListener('click', xxx)
 
 });
+
+
+
 //// TUTAJ SĄ FRAGMENTY KODU KTÓREGO JESZCZE NIE UŻYŁEM 
   /* 
    Metoda `.showInfo()` 
    wyświetlająca w konsoli wszystkie informacje o przepisie */
-  Recipe.prototype.showInfo = function() {
+   Recipe.prototype.showInfo = function() {
     console.warn(this.id, this.title); // wyświetl id oraz tytuł
     console.warn(this.description); // wyświetl opis
     this.ingredients.map(function(elem, i) {
@@ -254,3 +268,13 @@ addInstruction.addEventListener('click',saveInstruction );// event dodawania do 
 addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
 
     
+
+    if (window.location.pathname === "/app.html") {
+        const clrBtn = document.querySelector("#wyczysc");
+        clrBtn.addEventListener('click', xxx)
+    }
+
+
+
+
+

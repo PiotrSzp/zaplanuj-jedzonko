@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Twoje Przepisy | Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/fontawesome.css"/>
+</head>
+<body class="app-body">
+<div class="app-container">
+    <header class="app-header">
+        <div class="logo__container">
+            <h1 class="logo__header">Zaplanuj<span class="logo__header logo__second__word">Jedzonko</span></h1>
+        </div>
+        <div class="app-header__user">
+            <div class="app-header__name" id="nameDisplay"></div>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <nav class="app-nav">
+        <ul class="app-nav__list">
+            <li class="app-nav__item">
+                <a href="app.html" class="app-nav__link">Pulpit</a>
+            </li>
+            <li class="app-nav__item">
+                <a href="recipes.html" class="app-nav__link app-nav__link--active">Przepisy</a>
+            </li>
+            <li class="app-nav__item">
+                <a href="schedules.html" class="app-nav__link">Plany</a>
+            </li>
+        </ul>
+    </nav>
+    <!--
+    ################################################################
+    ############ TU SIĘ ZACZYNA GLOWNY EKRAN APLIKACJI #############
+    ################################################################
+    -->
+    <main class="app-main">
+        <div class="main-container">
+            <!--  ===== RECIPES LIST SCREEN START  =====  -->
+            <div class="main__screen  main__screen--visible main__screen--list" id="recipeList">
+                <div class="list__content">
+                    <div class="list__header">
+                        <div class="list__title">LISTA PRZEPISÓW</div>
+                        <label for="addRecipe" class="hidden-label">Dodaj przepis</label>
+                        <button class="fas fa-plus-square btn btn--fontawesome" id="addRecipe" title="Dodaj przepis"></button>
+                    </div>
+                    <div class="list__table-head list__table-head--recipes">
+                        <div>ID</div>
+                        <div>NAZWA</div>
+                        <div>OPIS</div>
+                        <div>AKCJE</div>
+                    </div>
+                    <div class="list__wraper">
+                        <div class="list__table-body" id="recipesTable">
+<!--                            <div class="list__row list__row&#45;&#45;recipies">-->
+<!--                                <div>1</div>-->
+<!--                                <div>Zapiekanka z brukselka</div>-->
+<!--                                <div>Mamusina najlepsza zapiekanka pod słońcem. Można ją podać jako główne danie albo-->
+<!--                                    jako kolację. W zapiekance możesz użyć również kiełbasy paprykowej sprawi ona, że-->
+<!--                                    zapiekanka będzie ostrzejsza w smaku. Zgodnie z zalecanimi Makłowicza, podawać z-->
+<!--                                    dobrze dobranym winkiem ;)-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label for="ID_edit" class="hidden-label">Edytuj przepis</label>-->
+<!--                                    <button class="btn btn&#45;&#45;fontawesome far fa-edit" id="ID_edit" title="Edytuj przepis"></button>-->
+<!--                                    <label for="ID_delete" class="hidden-label">Usuń przepis</label>-->
+<!--                                    <button class="btn btn&#45;&#45;fontawesome far fa-trash-alt" id="ID_delete" title="Usuń przepis"></button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  ===== recipes list screen end  =====  -->
+        </div>
+    </main>
+    <!--
+    ############ Glowny ekran applikacji - KONIEC  #############
+    -->
+
+</div>
+<script src="./js/app.js" defer></script>
+<script src="./js/recipe.js" defer></script>
+</body>
+</html>
+
