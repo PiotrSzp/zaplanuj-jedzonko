@@ -24,3 +24,7 @@ css/
 .idea/
 
 css/
+
+makiety/
+
+*.orig

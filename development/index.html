@@ -1,21 +1,84 @@
 <!DOCTYPE html>
 <html lang="pl">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <header>
-      <h1>ZaplanujJedzonko.pl</h1>
+    <header class="header">
+      <div class="header__container">
+        <div class="logo__container">
+          <h1 class="logo__header">Zaplanuj<span class="logo__header logo__second__word">Jedzonko</span></h1>
+        </div>
+        <nav class="menu__header">
+          <ul class="menu__list">
+            <li class="menu__element"><a href="#" class="menu__link link__first">ZAPLANUJ POSIŁKI!</a></li>
+            <li class="menu__element"><a href="#" class="menu__link link__second">DLACZEGO WARTO?</a></li>
+            <li class="menu__element"><a href="#" class="menu__link link__third">O MNIE</a></li>
+            <li class="menu__element"><a href="#" class="menu__link link__fourth">KONTAKT</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section>
+
+
+
+        <ul class="slides">
+            <input type="radio" name="radio-btn" id="img-1" checked />
+            <li class="slide-container">
+            <div class="slide">
+              <img src="" />
+                </div>
+            <div class="nav">
+              <label for="img-3" class="prev">&#x2039;</label>
+              <label for="img-2" class="next">&#x203a;</label>
+            </div>
+            </li>
+        
+            <input type="radio" name="radio-btn" id="img-2" />
+            <li class="slide-container">
+                <div class="slide">
+                  <img src="" />
+                </div>
+            <div class="nav">
+              <label for="img-1" class="prev">&#x2039;</label>
+              <label for="img-3" class="next">&#x203a;</label>
+            </div>
+            </li>
+        
+            <input type="radio" name="radio-btn" id="img-3" />
+            <li class="slide-container">
+                <div class="slide">
+                  <img src="" />
+                </div>
+            <div class="nav">
+              <label for="img-2" class="prev">&#x2039;</label>
+              <label for="img-1" class="next">&#x203a;</label>
+            </div>
+            </li>
+        
+            
+            </div>
+            </li>
+        
+            <li class="nav-dots">
+              <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+              <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+              <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+             
+            </li>
+        </ul>
 
       <!-- carousel -->
     </section>
     <section>
+    
+    </div> 
       <!-- CTA + button -->
     <div class="section__call"> 
       <div class="section__call_text">
@@ -31,21 +94,107 @@
     </div> 
       <!-- CTA + button --->
     </section>
-    <section>
-      <!-- features -->
-    </section>
+    <section class="about">
+    <!-- features -->
+    <div class="about__container">
+      <div class="about__box about__box--first">
+        <div class="box__image--check">
+            <i class="fas fa-check"></i>
+        </div>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p class="box__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore rerum hic aperiam autem accusantium
+          perferendis minus ut, nesciunt eligendi non, architecto quibusdam necessitatibus laborum, nulla nobis porro
+          natus beatae possimus.</p>
+      </div>
+      <div class="about__box about__box--second">
+          <div class="box__image--clock">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h1>Lorem ipsum dolor sit amet.</h1>
+          <p class="box__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore rerum hic aperiam autem accusantium
+            perferendis minus ut, nesciunt eligendi non, architecto quibusdam necessitatibus laborum, nulla nobis porro
+            natus beatae possimus.</p>
+        </div>
+        <div class="about__box about__box--third">
+            <div class="box__image--menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p class="box__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore rerum hic aperiam autem accusantium
+              perferendis minus ut, nesciunt eligendi non, architecto quibusdam necessitatibus laborum, nulla nobis porro
+              natus beatae possimus.</p>
+          </div>
+    </div>
     <section>
       <!-- newsletter -->
+      <div class="newsletter__container">
+        <div class="newsletter__text">
+          <h3>Lorem ipsum dolor sit amet</h3>
+        </div>
+        <div class="newsletter__form">
+          <input type="text">
+          <button class="newsletter__submit">Lorem</button>
+        </div>
+      </div>
+
     </section>
     <section>
-      <!-- aobut me -->
+      <!-- about me -->
+      <div class="author__container">
+        <div class="author__picture"></div>
+        <div class="author__info">
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <p class="author__info--text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse provident, dolor nihil tempore quisquam, numquam consectetur temporibus fugit quas illum voluptatibus eligendi impedit molestias eum odio beatae! Nam, harum aspernatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci repellendus velit assumenda quae reiciendis veniam maxime. Nam consequuntur fugiat id non aut, nobis iste in ea veritatis at libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae rem dignissimos sequi necessitatibus tempore quasi natus labore ut asperiores maiores! Natus quae qui in at quasi nisi vitae deserunt similique?
+          </p>
+        </div>
+      </div>
     </section>
     <section>
       <!-- three columns -->
     </section>
-    <footer>
+    <footer class="footer">
+      <div class="footer__big__container">
+        <div class="footer__top__container">
+          <div class="footer__small__container footer__container__first">
+            <h1 class="footer__small__h">Lorem ipsum dolor</h1>
+            <p class="footer__small__p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam at
+              porttitor sem.Aliguam erat volutpat. Dinec placerat nisl magna.</p>
+          </div>
+          <div class="footer__small__container footer__container__second">
+            <h1 class="footer__smll__h">Lorem ipsum dolor</h1>
+            <ul class="footer__small__li">
+              <li>consectetur adipisicing elit</li>
+              <li>sed do eiusmod tempor</li>
+              <li>incididunt ut labore</li>
+              <li>et dolore magna aliqua</li>
+            </ul>
+          </div>
+          <div class="footer__small__container footer__container__third">
+            <h1 class="footer__smll__h">Lorem ipsum dolor</h1>
+            <div class="footer__submit">
+              <input type="text" value=" ">
+              <button type="submit">Lorem</button>
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="footer__media">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter-square"></i>
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copy__container">
+          <h4 class="copyright__footer">Copyright<span class="copyright__footer www__footer">ZaplanujJedzonko.pl</span></h4>
+        </div>
+      </div>
       <!-- copyright -->
     </footer>
-    <script src="./js/index.js"></script>
-  </body>
+
+
+
+  <script src="./js/index.js" defer></script>
+</body>
+
+
 </html>
