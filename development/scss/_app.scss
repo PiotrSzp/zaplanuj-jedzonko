@@ -203,42 +203,48 @@
 
     }
   }
-}
 
-
-
-
-.main__recipes-info{
- 
-  display: flex;
-  flex-direction: column;
-  margin: 5px 0 10px;
-}
-//---
-.main__recipes-lists{
-  display: flex;  
-}
-
-.main__recipes_add{
-  flex-direction: column;
-  position: relative;
-  height: 50px;
-  margin:auto;
-  width: 48%;
-  i{position: absolute;
-    
-    margin: 5px;
-    color: #468966;
-    font-size: 32px;
+  // -------------- 4.3 Style okna addRecipe  ----------
+  .main__screen--addRecipe {
+    background-color: $colorBackg;
+    border: 1px dashed $colorTabText;
   }
-}
 
-.main__screen_order-list,
-.main__screen_unorder-list{
-  margin: 0;
-  max-height:150px;
-  overflow-y: scroll;
-}
+  .main__recipes-info {
+
+
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 10px;
+  }
+
+  //---
+  .main__recipes-lists {
+    display: flex;
+  }
+
+  .main__recipes_add {
+    flex-direction: column;
+    position: relative;
+    height: 50px;
+    margin: auto;
+    width: 48%;
+
+    i {
+      position: absolute;
+
+      margin: 5px;
+      color: #468966;
+      font-size: 32px;
+    }
+  }
+
+  .main__screen_order-list,
+  .main__screen_unorder-list {
+    margin: 0;
+    max-height: 150px;
+    overflow-y: scroll;
+  }
 
 
   // -------------- 4.2 Style okna dashboard (powracający do aplikacji) ----
@@ -338,6 +344,199 @@
       -webkit-transform: rotate(-45deg);
     }
   }
+
+
+  // -------------- 4.4 Style okna addSchedule ----
+
+  .main__screen--addSchedule {
+    background-color: $colorBackg;
+    border: 1px dashed $colorTabText;
+
+    .schedule__outercontainer {
+      width: 100%;
+      height: 100%;
+      padding: 24px 36px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+
+      .schedule__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 35px;
+        font-size: 30px;
+        border-bottom: 3px solid #CBCBCB;
+
+        .schedule__title {
+          color: $colorOrange;
+        }
+
+        button {
+          font-size: 18px;
+          font-weight: 700;
+          padding: 7px 14px;
+          margin-bottom: 4px;
+        }
+      }
+
+      .schedule__innercontainer {
+        //border: 1px solid red;
+        width: calc(100% - 80px);
+        flex-grow: 1;
+        box-sizing: border-box;
+        margin-right: 100px;
+        padding: 8px 0 10px 8px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+
+        .input-wrapper {
+          flex: 0 0;
+          margin-bottom: 14px;
+          display: flex;
+          align-items: flex-start;
+
+          label {
+            display: inline-block;
+            width: 210px;
+            font-size: 28px;
+          }
+
+          input, textarea {
+            flex-grow: 1;
+            height: 32px;
+            padding: 9px;
+            box-sizing: border-box;
+          }
+
+          textarea {
+            height: 88px;
+            resize: none;
+          }
+
+          &:last-of-type input {
+            flex-grow: 0;
+            width: 30px;
+          }
+
+          *::placeholder {
+            font-size: 14px;
+            font-family: 'Open Sans', Arial, sans-serif;
+          }
+        }
+
+        .table-wrapper {
+          margin-top: 14px;
+          flex-grow: 1;
+          //border: 1px solid red;
+          display: grid;
+          grid-template-columns: [week] 1fr [breakfast] 1fr [breakfast2] 1fr [soup] 1fr [maincourse] 1fr [supper] 1fr;
+          grid-template-rows: [head] auto [mon] auto [tue] auto [wed] auto [thu] auto [fri] auto [sat] auto [sun] auto;
+
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+          }
+
+          // column classes
+          .breakfast {
+            grid-column: breakfast / span 1;
+          }
+
+          .breakfast2 {
+            grid-column: breakfast2 / span 1;
+          }
+
+          .soup {
+            grid-column: soup / span 1;
+          }
+
+          .maincourse {
+            grid-column: maincourse / span 1;
+          }
+
+          .supper {
+            grid-column: supper / span 1;
+          }
+
+          // row classes
+          .mon {
+            grid-row: mon / span 1;
+          }
+
+          .tue {
+            grid-row: tue / span 1;
+          }
+
+          .wed {
+            grid-row: wed / span 1;
+          }
+
+          .thu {
+            grid-row: thu / span 1;
+          }
+
+          .fri {
+            grid-row: fri / span 1;
+          }
+
+          .sat {
+            grid-row: sat / span 1;
+          }
+
+          .sun {
+            grid-row: sun / span 1;
+            border-bottom: 1px solid $colorTabBorder;
+          }
+
+
+          // cell styles
+          .table__head {
+            font-weight: 700;
+            font-size: 20px;
+            grid-row: head / span 1;
+            border-top: 1px solid $colorTabBorder;
+          }
+
+          .table__weekday {
+            font-weight: 700;
+            font-size: 17px;
+            grid-column: week / span 1;
+            border-top: 1px solid $colorTabBorder;
+          }
+
+          .table__cell {
+            border-top: 1px solid $colorTabBorder;
+
+
+            select {
+              background-color: #ffffff;
+              width: 145px;
+              height: 30px;
+              padding: 4px;
+              border: 1px solid $colorTabBorder;
+              border-radius: 5px;
+              color: inherit;
+              outline: none;
+              margin: 2px 0 2px 0;
+            }
+
+            .error {
+              border-color: $colorTrash;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
 
 
 

@@ -155,75 +155,131 @@
                     <h2 class="main__recipes-h2">NOWY PRZEPIS</h2>
                     <button class="main__recipes-button">Zapisz i zamknij</button>
                 </div>
-                    <hr>
+                <hr>
                 <form>
-                        
-                    <div class="main__recipes-info"> 
-                        <label>Nazwa przepisu</label>                  
-                        <textarea name="name" 
-                        id="main__recipes-text-name" cols="80" rows="1" ></textarea>
-                            <br>
-                            <label>Opis przepisu</label>
-                            
-                            <textarea name="description"
-                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
-                              
+
+                    <div class="main__recipes-info">
+                        <label>Nazwa przepisu</label>
+                        <textarea name="name"
+                                  id="main__recipes-text-name" cols="80" rows="1"></textarea>
+                        <br>
+                        <label>Opis przepisu</label>
+
+                        <textarea name="description"
+                                  id="main__recipes-txt-discription" cols="80" rows="4"></textarea>
+
                     </div>
                     <div class="main__recipes-lists">
-                           
+
                         <div class="main__recipes_add">
                             <label>INSTRUKCJE</label>
-                            <hr> 
-                            
-                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
+                            <hr>
+
+                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4"></textarea>
                             <i class="fas fa-plus-square  fa-plus-instruction"></i>
                             <ol class="main__screen_order-list">
-                                                        
+
                             </ol>
                         </div>
-                        
+
                         <div class="main__recipes_add">
                             <label>SKŁADNIKI</label>
                             <hr>
-                            <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
+                            <textarea name="components" id="main__recipes-component" cols="40" rows="4"></textarea>
                             <i class="fas fa-plus-square fa-plus-component"></i>
                             <ul class="main__screen_unorder-list">
-                                                                
-                            </ul>                           
+
+                            </ul>
                         </div>
-                            
+
                     </div>
                 </form>
             </div>
             <!--  ===== add / edit recipe screen end    =====  -->
             <!--  ==== ADD / EDIT SCHEDULE SCREEN START ===== -->
             <div class="main__screen main__screen--addSchedule" id="addSchedule">
+                <div class="schedule__outercontainer">
 
-                <div class="main__recipes-header">
-                    <h2 class="main__recipes-h2">NOWY PLAN</h2>
-                    <button class="main__recipes-button">Zapisz i zamknij</button>
-                </div>
-                <hr>
-                <form>
-                    <div class="main__recipes-info">
-                        <label for="schedule-name">Nazwa planu</label>
-                        <textarea name="name"
-                                  id="schedule-name" cols="80" rows="1"></textarea>
-                        <br>
-                        <label for="schedule-description">Opis planu</label>
-
-                        <textarea name="description"
-                                  id="schedule-description" cols="80" rows="4"></textarea>
-                        <br>
-                        <label for="schedule-weekNumber">Numer tygodnia</label>
-
-                        <textarea name="description"
-                                  id="schedule-weekNumber" cols="1" rows="1"></textarea>
-
+                    <div class="schedule__header">
+                        <div class="schedule__title">NOWY PLAN</div>
+                        <button class="btn" id="saveSchedBtn" form="schedForm" type="submit">Zapisz i zamknij</button>
                     </div>
+                    <div class="schedule__innercontainer">
+                        <div class="input-wrapper">
+                            <label for="schedName">Nazwa planu</label>
+                            <input type="text" id="schedName" name="schedName" placeholder="Podaj nazwę planu">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="schedDecsription">Opis planu</label>
+                            <textarea id="schedDescription" name="schedDecsription"
+                                      placeholder="Opisz swój plan"></textarea>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="schedWeekNo">Numer tygodnia</label>
+                            <input type="text" id="schedWeekNo" name="schedWeekNo"
+                                   placeholder="">
+                        </div>
+                        <form class="table-wrapper" id="schedForm">
+                            <!-- Naglowek tabeli -->
+                            <div class="table__head breakfast">ŚNIADANIE</div>
+                            <div class="table__head breakfast2">DRUGIE ŚNIADANIE</div>
+                            <div class="table__head soup">ZUPA</div>
+                            <div class="table__head maincourse">DRUGIE DANIE</div>
+                            <div class="table__head supper">KOLACJA</div>
+                            <!-- Dni tygodnia tabeli -->
+                            <div class="table__weekday mon">PONIEDZIAŁEK</div>
+                            <div class="table__weekday tue">WTOREK</div>
+                            <div class="table__weekday wed">ŚRODA</div>
+                            <div class="table__weekday thu">CZWARTEK</div>
+                            <div class="table__weekday fri">PIĄTEK</div>
+                            <div class="table__weekday sat">SOBOTA</div>
+                            <div class="table__weekday sun">NIEDZIELA</div>
+                            <!-- inputy tabeli -->
+                            <div class="table__cell mon breakfast"></div>
+                            <div class="table__cell mon breakfast2"></div>
+                            <div class="table__cell mon soup"></div>
+                            <div class="table__cell mon maincourse"></div>
+                            <div class="table__cell mon supper"></div>
 
-                </form>
+                            <div class="table__cell tue breakfast"></div>
+                            <div class="table__cell tue breakfast2"></div>
+                            <div class="table__cell tue soup"></div>
+                            <div class="table__cell tue maincourse"></div>
+                            <div class="table__cell tue supper"></div>
 
+                            <div class="table__cell wed breakfast"></div>
+                            <div class="table__cell wed breakfast2"></div>
+                            <div class="table__cell wed soup"></div>
+                            <div class="table__cell wed maincourse"></div>
+                            <div class="table__cell wed supper"></div>
+
+                            <div class="table__cell thu breakfast"></div>
+                            <div class="table__cell thu breakfast2"></div>
+                            <div class="table__cell thu soup"></div>
+                            <div class="table__cell thu maincourse"></div>
+                            <div class="table__cell thu supper"></div>
+
+                            <div class="table__cell fri breakfast"></div>
+                            <div class="table__cell fri breakfast2"></div>
+                            <div class="table__cell fri soup"></div>
+                            <div class="table__cell fri maincourse"></div>
+                            <div class="table__cell fri supper"></div>
+
+                            <div class="table__cell sat breakfast"></div>
+                            <div class="table__cell sat breakfast2"></div>
+                            <div class="table__cell sat soup"></div>
+                            <div class="table__cell sat maincourse"></div>
+                            <div class="table__cell sat supper"></div>
+
+                            <div class="table__cell sun breakfast"></div>
+                            <div class="table__cell sun breakfast2"></div>
+                            <div class="table__cell sun soup"></div>
+                            <div class="table__cell sun maincourse"></div>
+                            <div class="table__cell sun supper"></div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
             <!--  ===== add / edit schedule screen end    =====  -->
         </div>
@@ -235,6 +291,7 @@
 
 </div>
 <script src="./js/app.js" defer></script>
+<script src="./js/newSchedule.js" defer></script>
 </body>
 </html>
 

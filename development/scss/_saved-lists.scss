@@ -32,6 +32,10 @@
     border-bottom: 3px solid $colorTabBorder;
     margin-bottom: 16px;
 
+    .list__title {
+      color: $colorOrange;
+    }
+
     button {
       color: $colorSuccess;
       font-size: 32px;
