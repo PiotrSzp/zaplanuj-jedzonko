@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }else{
         console.log("Czegos brakuje!");
     }
-  }
+  };
 
  ////f-cja dodająca składniki do listy 
   const saveComponent = function (e) {
@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
         indexComponent.placeholder = 'Musisz podać jakiś produkt';
         
     }
-  }
+  };
 
   ////f-cja dodająca kroki do listy instrukcji 
     const saveInstruction = function (e) {
@@ -333,18 +333,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log('hello');
 
-    }
+    };
 
 addComponent.addEventListener('click',saveComponent ); // event dodawania do listy 
 addInstruction.addEventListener('click',saveInstruction );// event dodawania do listy
 addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
-
-    
-
-    if (window.location.pathname === "/app.html") {
-        const clrBtn = document.querySelector("#wyczysc");
-        clrBtn.addEventListener('click', xxx)
-    }
 
 
 

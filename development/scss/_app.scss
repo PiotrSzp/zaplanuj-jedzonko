@@ -309,7 +309,7 @@
 
   }
 
-  //---
+
 
 
   .main__recipes-info {
@@ -319,7 +319,7 @@
     margin: 5px 0 10px;
   }
 
-  //---
+
   .main__recipes-lists {
     display: flex;
   }
@@ -350,12 +350,21 @@
 
 
 // -------------- 4.2 Style okna dashboard (powracający do aplikacji) ----
+.main__screen--dashboard {
+  background-color: $colorBackg;
+  border: 1px dashed $colorTabText;
+
+  .buttons-widgets-container {
+    display: flex;
+  }
+
+}
 
 
 .week__plan__container {
   padding-top: 40px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 132px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

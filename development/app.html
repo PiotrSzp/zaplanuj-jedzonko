@@ -54,38 +54,49 @@
                 </div>
             </div>
             <!--  ===== first entry screen end  =====  -->
-
-            <div class="container__widget__notification">
-                <div class="first__notification__info">
+            <!--  ===== DASHBOARD SCREEN START  =====  -->
+            <div class="main__screen main__screen--dashboard" id="dashboard">
+                <div class="buttons-widgets-container">
+                    <button class="btn__add__recipe">
+                        <span class="btn__icon__plus"></span>
+                        <span class="btn__name__przepis">dodaj przepis</span>
+                    </button>
+                    <button class="btn__add__recipe">
+                        <span class="btn__icon__plus"></span>
+                        <span class="btn__name__plan">dodaj plan</span>
+                    </button>
+                    <div class="container__widget__notification">
+                        <div class="first__notification__info">
                     <span class="first__icon">
                         <i class="fas fa-info-circle"></i>
                     </span>
-                    <span class="first__txt__recpie">Msz już 99 przepisów, nieźle!</span>
-                    <span class="first_close_info">
+                            <span class="first__txt__recpie">Msz już 99 przepisów, nieźle!</span>
+                            <span class="first_close_info">
                         <i class="fas fa-window-close"></i>
                     </span>
-                </div>
-                <div class="second__notification__plan">
+                        </div>
+                        <div class="second__notification__plan">
                     <span class="second__icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
-                    <span class="second__txt__plan">Pamiętaj ,aby dodać plan!</span>
-                    <span class="second__close__plan">
+                            <span class="second__txt__plan">Pamiętaj ,aby dodać plan!</span>
+                            <span class="second__close__plan">
                         <i class="fas fa-window-close"></i>
                      </span>
-                </div>
-                <div class="third__notification__presence">
+                        </div>
+                        <div class="third__notification__presence">
                     <span class="third__icon">
                         <i class="fas fa-check-square"></i>
                     </span>
-                    <span class="third__txt__presence">Świetnie, że jesteś! Udanego planowania i smacznego!</span>
-                    <span class="third_close_presence">
+                            <span class="third__txt__presence">Świetnie, że jesteś! Udanego planowania i smacznego!</span>
+                            <span class="third_close_presence">
                         <i class="fas fa-window-close"></i>
                     </span>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <!--  ===== DASHBOARD SCREEN START  =====  -->
-            <div class="main__screen main__screen--dashboard" id="dashboard">
+
                 <div class="week__plan__container">
                     <div class="week__plan__header">
                         <h3>Twój plan na {nr_tygodnia} tydzień:</h3>
@@ -188,41 +199,41 @@
                 </div>
                 <hr>
                 <form>
-                        
-                    <div class="main__recipes-info"> 
-                        <label>Nazwa przepisu</label>                  
-                        <textarea name="name" 
-                        id="main__recipes-text-name" cols="80" rows="1" ></textarea>
-                            <br>
-                            <label>Opis przepisu</label>
-                            
-                            <textarea name="description"
-                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
-                              
+
+                    <div class="main__recipes-info">
+                        <label>Nazwa przepisu</label>
+                        <textarea name="name"
+                                  id="main__recipes-text-name" cols="80" rows="1"></textarea>
+                        <br>
+                        <label>Opis przepisu</label>
+
+                        <textarea name="description"
+                                  id="main__recipes-txt-discription" cols="80" rows="4"></textarea>
+
                     </div>
                     <div class="main__recipes-lists">
-                           
+
                         <div class="main__recipes_add">
                             <label>INSTRUKCJE</label>
-                            <hr> 
-                            
-                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
+                            <hr>
+
+                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4"></textarea>
                             <i class="fas fa-plus-square  fa-plus-instruction"></i>
                             <ol class="main__screen_order-list">
-                                                        
+
                             </ol>
                         </div>
-                        
+
                         <div class="main__recipes_add">
                             <label>SKŁADNIKI</label>
                             <hr>
-                            <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
+                            <textarea name="components" id="main__recipes-component" cols="40" rows="4"></textarea>
                             <i class="fas fa-plus-square fa-plus-component"></i>
                             <ul class="main__screen_unorder-list">
-                                                                
-                            </ul>                           
+
+                            </ul>
                         </div>
-                            
+
                     </div>
                 </form>
             </div>
@@ -241,7 +252,7 @@
                             <input type="text" id="schedName" name="schedName" placeholder="Podaj nazwę planu">
                         </div>
                         <div class="input-wrapper">
-                            <label for="schedDecsription">Opis planu</label>
+                            <label for="schedDescription">Opis planu</label>
                             <textarea id="schedDescription" name="schedDecsription"
                                       placeholder="Opisz swój plan"></textarea>
                         </div>
