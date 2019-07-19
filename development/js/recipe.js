@@ -60,8 +60,9 @@ newRecipe1.instructions.push("Rozpuść masło na patelni i podgrzej.");
 newRecipe1.instructions.push("Dodaj boczek.");
 newRecipe1.instructions.push("Na rozgrzaną patelnię wbij jajaka i mieszaj doprawiając.");
 newRecipe1.instructions.push("Podawaj z grzankami. Smacznego!");
-
-
+allRecipies.forEach(function(recipe){
+    localStorage.setItem('przepis_'+recipe.id, JSON.stringify(recipe))    
+})
 // #####/\#####################################################
 // ####/||\#### ROBOCZY KOD DO USUNIĘCIA NA PRODUKCJI #########
 // #####||#####################################################
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rowArray[2].innerText = obj.description;
         rowArray[3].innerHTML = `
                 <label for="${obj.id}_edit" class="hidden-label">Edytuj przepis</label>
-                <button class="btn btn--fontawesome far fa-edit" id="${obj.id}_edit" title="Edytuj przepis"></button>
+                <button class="btn btn--fontawesome far fa-edit" id="${obj.id}_edit" title="Edytuj przepis" onClick="javascript:window.location.href='/edit.html?id='+'${obj.id}'"></button>
                 <label for="${obj.id}_delete" class="hidden-label">Usuń przepis</label>
                 <button class="btn btn--fontawesome far fa-trash-alt" id="${obj.id}_delete" title="Usuń przepis"></button>
         `;
