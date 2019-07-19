@@ -76,9 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const schedWeekNo = document.querySelector("#schedWeekNo");
 
 
-    const allRecipes = JSON.parse(localStorage.getItem('allRecipies'));
+    let allRecipes = JSON.parse(localStorage.getItem('allRecipies'));
     // const allRecipes = allRecipies; //to trzeba przełączyć na powyższe jak localstorage recipies beda
-    console.log(allRecipes);
+
+    if (allRecipes === null) {
+        allRecipes = [];
+    }
+
     let allScheds = [];
 
     let day = 1;

@@ -19,24 +19,24 @@
             <i class="fas fa-user-circle"></i>
         </div>
     </header>
-    <nav class="app-nav">
-        <ul class="app-nav__list">
-            <li class="app-nav__item">
-                <a href="app.html" class="app-nav__link app-nav__link--active">Pulpit</a>
-            </li>
-            <li class="app-nav__item">
-                <a href="recipes.html" class="app-nav__link">Przepisy</a>
-            </li>
-            <li class="app-nav__item">
-                <a href="schedules.html" class="app-nav__link">Plany</a>
-            </li>
-        </ul>
-    </nav>
-    <!--
-    ################################################################
-    ############ TU SIĘ ZACZYNA GLOWNY EKRAN APLIKACJI #############
-    ################################################################
-    -->
+        <nav class="app-nav">
+            <ul class="app-nav__list">
+                <li class="app-nav__item">
+                    <a href="app.html" class="app-nav__link app-nav__link--active">Pulpit</a>
+                </li>
+                <li class="app-nav__item">
+                    <a href="recipes.html" class="app-nav__link">Przepisy</a>
+                </li>
+                <li class="app-nav__item">
+                    <a href="schedules.html" class="app-nav__link">Plany</a>
+                </li>
+            </ul>
+        </nav>
+<!--
+################################################################
+############ TU SIĘ ZACZYNA GLOWNY EKRAN APLIKACJI #############
+################################################################
+-->
     <main class="app-main">
         <div class="main-container">
             <!--  ===== FIRST ENTRY SCREEN START  =====  -->
@@ -57,11 +57,11 @@
             <!--  ===== DASHBOARD SCREEN START  =====  -->
             <div class="main__screen main__screen--dashboard" id="dashboard">
                 <div class="buttons-widgets-container">
-                    <button class="btn__add__recipe">
+                    <button class="btn__add__recipe" data-screen-id="addRecipe" id="XXX">
                         <span class="btn__icon__plus"></span>
                         <span class="btn__name__przepis">dodaj przepis</span>
                     </button>
-                    <button class="btn__add__recipe">
+                    <button class="btn__add__recipe" data-screen-id="addSchedule" id="YYY">
                         <span class="btn__icon__plus"></span>
                         <span class="btn__name__plan">dodaj plan</span>
                     </button>
@@ -197,43 +197,43 @@
                     <h2 class="main__recipes-h2">NOWY PRZEPIS</h2>
                     <button class="main__recipes-button">Zapisz i zamknij</button>
                 </div>
-                <hr>
+                    <hr>
                 <form>
-
-                    <div class="main__recipes-info">
-                        <label>Nazwa przepisu</label>
-                        <textarea name="name"
-                                  id="main__recipes-text-name" cols="80" rows="1"></textarea>
-                        <br>
-                        <label>Opis przepisu</label>
-
-                        <textarea name="description"
-                                  id="main__recipes-txt-discription" cols="80" rows="4"></textarea>
-
+                        
+                    <div class="main__recipes-info"> 
+                        <label>Nazwa przepisu</label>                  
+                        <textarea name="name" 
+                        id="main__recipes-text-name" cols="80" rows="1" ></textarea>
+                            <br>
+                            <label>Opis przepisu</label>
+                            
+                            <textarea name="description"
+                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
+                              
                     </div>
                     <div class="main__recipes-lists">
-
+                           
                         <div class="main__recipes_add">
                             <label>INSTRUKCJE</label>
-                            <hr>
-
-                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4"></textarea>
+                            <hr> 
+                            
+                            <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square  fa-plus-instruction"></i>
                             <ol class="main__screen_order-list">
-
+                                                        
                             </ol>
                         </div>
-
+                        
                         <div class="main__recipes_add">
                             <label>SKŁADNIKI</label>
                             <hr>
-                            <textarea name="components" id="main__recipes-component" cols="40" rows="4"></textarea>
+                            <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square fa-plus-component"></i>
                             <ul class="main__screen_unorder-list">
-
-                            </ul>
+                                                                
+                            </ul>                           
                         </div>
-
+                            
                     </div>
                 </form>
             </div>

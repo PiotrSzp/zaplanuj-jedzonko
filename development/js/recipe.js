@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const recipesTable = document.getElementById('recipesTable');
 
 
-    //const allRecipes = JSON.parse(localStorage.getItem('allRecipies'));
-    const allRecipes = allRecipies; //to trzeba przełączyć na powyższe jak localstorage recipies beda
+    const allRecipes = JSON.parse(localStorage.getItem('allRecipies'));
+    // const allRecipes = allRecipies; //to trzeba przełączyć na powyższe jak localstorage recipies beda
 
     const tableInnerHTML = document.createDocumentFragment();
 
