@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 dashboardDiv.classList.add('main__screen--visible');
             }
         }
-    };
 
+    };
     isNew();
 
 
@@ -338,6 +338,13 @@ document.addEventListener("DOMContentLoaded", function () {
 addComponent.addEventListener('click',saveComponent ); // event dodawania do listy 
 addInstruction.addEventListener('click',saveInstruction );// event dodawania do listy
 addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
+
+    
+
+    if (window.location.pathname === "/app.html") {
+        const clrBtn = document.querySelector("#wyczysc");
+        clrBtn.addEventListener('click', xxx)
+    }
 
 
 

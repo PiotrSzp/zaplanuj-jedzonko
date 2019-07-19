@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectInnerHtml.appendChild(nthOption);
             }
 
-            inputSelect.appendChild(selectInnerHtml);
+            inputSelesct.appendChild(selectInnerHtml);
 
             divInnerHtml.appendChild(inputSelect);
 
