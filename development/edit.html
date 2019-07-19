@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/fontawesome.css"/>
+</head>
+<body class="app-body">
+<div class="app-container">
+    <header class="app-header">
+        <div class="logo__container">
+            <h1 class="logo__header">Zaplanuj<span class="logo__header logo__second__word">Jedzonko</span></h1>
+        </div>
+        <div class="app-header__user">
+            <div class="app-header__name" id="nameDisplay"></div>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+        <nav class="app-nav">
+            <ul class="app-nav__list">
+                <li class="app-nav__item">
+                    <a href="app.html" class="app-nav__link">Pulpit</a>
+                </li>
+                <li class="app-nav__item">
+                    <a href="recipes.html" class="app-nav__link app-nav__link--active">Przepisy</a>
+                </li>
+                <li class="app-nav__item">
+                    <a href="schedules.html" class="app-nav__link">Plany</a>
+                </li>
+            </ul>
+        </nav>
+<!--
+################################################################
+############ TU SIĘ ZACZYNA GLOWNY EKRAN APLIKACJI #############
+################################################################
+-->
+    <main class="app-main">
+        <div class="main-container">
+            <!--  ===== RECIPES LIST SCREEN START  =====  -->
+
+            <div class=" main-container main__screen--addRecipe" id="addRecipe">
+
+                <div class="main__recipes-header">
+                        <h2 class="main__recipes-h2">EDYTUJ PRZEPIS</h2>
+                        <button class="main__recipes-button">Zapisz i zamknij</button>
+                </div>
+                <hr>
+                <form>
+                    <div class="main__recipes-info"> 
+                            <label>Nazwa przepisu</label>                  
+                            <textarea name="name" 
+                            id="main__recipes-text-name" cols="80" rows="1" ></textarea>
+                                <br>
+                                <label>Opis przepisu</label>
+                                
+                                <textarea name="description"
+                            id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
+                                    
+                    </div>
+
+                    <div class="main__recipes-lists">
+                        <div class="main__recipes_add">
+                                <label>INSTRUKCJE</label>
+                                <hr> 
+                                
+                                <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
+                                <i class="fas fa-plus-square  fa-plus-instruction"></i>
+                                <ol class="main__screen_order-list">
+                                                            
+                                </ol>
+                        </div>
+                        <div class="main__recipes_add">
+                            <label>SKŁADNIKI</label>
+                            <hr>
+                            <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
+                            <i class="fas fa-plus-square fa-plus-component"></i>
+                            <ul class="main__screen_unorder-list">
+                                                                
+                            </ul>                           
+                        </div>
+                    </div>
+                </form>
+</div>
+
+            </div>
+            <!--  ===== recipes list screen end  =====  -->
+        </div>
+    </main>
+<!--
+############ Glowny ekran applikacji - KONIEC  #############
+-->
+
+</div>
+<script src="./js/editRecipe.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
