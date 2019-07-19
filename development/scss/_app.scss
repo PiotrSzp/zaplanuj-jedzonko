@@ -139,6 +139,29 @@
   transform: translateY(50%);
 }
 
+//=========== 3.Widgety  ================
+@mixin notification($color) {
+  color: $color;
+  background-color: white;
+  border: 1px dashed $color;
+  padding: 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  width: 430px;
+  font-weight: bolder;
+}
+
+.first__notification__info {
+  @include notification(#3498DB);
+}
+
+.second__notification__plan {
+  @include notification(#FFB03B);
+}
+
+.third__notification__presence {
+  @include notification(#468966);
+}
 
 //=========== 4. APP MAIN ================ (ogolne style okien aplikacji)
 .app-main {

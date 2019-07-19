@@ -483,11 +483,17 @@ input#img-3:checked ~ .nav-dots label#img-dot-3
 .footer__media {
   height: 60px;
   width: 230px;
+  display: flex;
+  justify-content: space-around;
+
 
   .fab {
+    margin-top: 20px;
     height: 30px;
     color: white;
-    font-size: 25px;
+    font-size: 30px;
+
+
   }
 }
 
@@ -505,6 +511,7 @@ input#img-3:checked ~ .nav-dots label#img-dot-3
   padding: 15px;
   margin: 0;
 }
+
 
 .www__footer {
   color: #E58A20;
