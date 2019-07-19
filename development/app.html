@@ -54,140 +54,142 @@
                 </div>
             </div>
             <!--  ===== first entry screen end  =====  -->
-
-            <div class="container__widget__notification">
-                <div class="first__notification__info">
+            <!--  ===== DASHBOARD SCREEN START  =====  -->
+            <div class="main__screen main__screen--dashboard" id="dashboard">
+                <div class="buttons-widgets-container">
+                    <button class="btn__add__recipe" data-screen-id="addRecipe" id="XXX">
+                        <span class="btn__icon__plus"></span>
+                        <span class="btn__name__przepis">dodaj przepis</span>
+                    </button>
+                    <button class="btn__add__recipe" data-screen-id="addSchedule" id="YYY">
+                        <span class="btn__icon__plus"></span>
+                        <span class="btn__name__plan">dodaj plan</span>
+                    </button>
+                    <div class="container__widget__notification">
+                        <div class="first__notification__info">
                     <span class="first__icon">
                         <i class="fas fa-info-circle"></i>
                     </span>
-                    <span class="first__txt__recpie">Msz już 99 przepisów, nieźle!</span>
-                    <span class="first_close_info">
+                            <span class="first__txt__recpie">Msz już 99 przepisów, nieźle!</span>
+                            <span class="first_close_info">
                         <i class="fas fa-window-close"></i>
                     </span>
-                </div>
-                <div class="second__notification__plan">
+                        </div>
+                        <div class="second__notification__plan">
                     <span class="second__icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
-                    <span class="second__txt__plan">Pamiętaj ,aby dodać plan!</span>
-                    <span class="second__close__plan">
+                            <span class="second__txt__plan">Pamiętaj ,aby dodać plan!</span>
+                            <span class="second__close__plan">
                         <i class="fas fa-window-close"></i>
                      </span>
-                </div>
-                <div class="third__notification__presence">
+                        </div>
+                        <div class="third__notification__presence">
                     <span class="third__icon">
                         <i class="fas fa-check-square"></i>
                     </span>
-                    <span class="third__txt__presence">Świetnie, że jesteś! Udanego planowania i smacznego!</span>
-                    <span class="third_close_presence">
+                            <span class="third__txt__presence">Świetnie, że jesteś! Udanego planowania i smacznego!</span>
+                            <span class="third_close_presence">
                         <i class="fas fa-window-close"></i>
                     </span>
-                </div>
-            </div>
-            <!--  ===== DASHBOARD SCREEN START  =====  -->
-
-            <div class="main__screen main__screen--dashboard" id="dashboard">
-                <div class="week__plan__container">
-                        <div class="week__plan__header">
-                            <h3>Twój plan na {nr_tygodnia} tydzień:</h3>
-                        </div>
-                        <div class="week__plan">
-                            <table class="week__plan__table">
-
-                                <thead>
-                                    <tr class="table__header">
-                                        <td class="day-name1">Poniedziałek</td>
-                                        <td class="day-name2">Wtorek</td>
-                                        <td class="day-name3">Środa</td>
-                                        <td class="day-name4">Czwartek</td>
-                                        <td class="day-name5">Piątek</td>
-                                        <td class="day-name6">Sobota</td>
-                                        <td class="day-name7">Niedziela</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="food__plan">
-                                    <tr class="meal1">
-                                        <td class="day1__meal1">Śniadanie</td>
-                                        <td class="day2__meal1">Śniadanie</td>
-                                        <td class="day3__meal1">Śniadanie</td>
-                                        <td class="day4__meal1">Śniadanie</td>
-                                        <td class="day5__meal1">Śniadanie</td>
-                                        <td class="day6__meal1">Śniadanie</td>
-                                        <td class="day7__meal1">Śniadanie</td>
-
-                                    </tr>
-                                    <tr class="meal2">
-                                        <td class="day1__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day2__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day3__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day4__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day5__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day6__meal2">Drugie<br>śniadanie</td>
-                                        <td class="day7__meal2">Drugie<br>śniadanie</td>
-
-                                    </tr>
-                                    <tr class="meal3">
-                                        <td class="day1__meal3">Zupa</td>
-                                        <td class="day2__meal3">Zupa</td>
-                                        <td class="day3__meal3">Zupa</td>
-                                        <td class="day4__meal3">Zupa</td>
-                                        <td class="day5__meal3">Zupa</td>
-                                        <td class="day6__meal3">Zupa</td>
-                                        <td class="day7__meal3">Zupa</td>
-
-                                    </tr>
-                                    <tr class="meal4">
-                                        <td class="day1__meal4">Drugie<br>danie</td>
-                                        <td class="day2__meal4">Drugie<br>danie</td>
-                                        <td class="day3__meal4">Drugie<br>danie</td>
-                                        <td class="day4__meal4">Drugie<br>danie</td>
-                                        <td class="day5__meal4">Drugie<br>danie</td>
-                                        <td class="day6__meal4">Drugie<br>danie</td>
-                                        <td class="day7__meal4">Drugie<br>danie</td>
-
-                                    </tr>
-                                    <tr class="meal5">
-                                        <td class="day1__meal5">Kolacja</td>
-                                        <td class="day2__meal5">Kolacja</td>
-                                        <td class="day3__meal5">Kolacja</td>
-                                        <td class="day4__meal5">Kolacja</td>
-                                        <td class="day5__meal5">Kolacja</td>
-                                        <td class="day6__meal5">Kolacja</td>
-                                        <td class="day7__meal5">Kolacja</td>
-
-                                    </tr>
-                                </tbody>
-
-                            </table>
-
-                        </div>
-                        <div class="week__plan__container switch__buttons">
-                            <div class="switch__previous">
-                                <i class="arrow_left"></i>
-                                <i class="arrow_left"></i>
-                                <button class="button_previous">poprzedni</button>
-                            </div>
-                            <div class="switch__next">
-                                <button class="button_next">następny</button>
-                                <i class="arrow_right"></i>
-                                <i class="arrow_right"></i>
-                            </div>
                         </div>
                     </div>
 
                 </div>
-                <button class="btn__add__recipe">
-                    <span class="btn__icon__plus"></span>
-                    <span class="btn__name__przepis">dodaj przepis</span>
-                </button>
-                <button class="btn__add__recipe">
-                    <span class="btn__icon__plus"></span>
-                    <span class="btn__name__plan">dodaj plan</span>
-                </button>
-                <div>CZEŚĆ, JESTEM GŁÓWNYM EKRANEM APLIKACJI. ROBIĘ CO MOGĘ...</div>
-                <button id="wyczysc">roboczy button do czyszczenia localstorage</button>
+
+                <div class="week__plan__container">
+                    <div class="week__plan__header">
+                        <h3>Twój plan na {nr_tygodnia} tydzień:</h3>
+                    </div>
+                    <div class="week__plan">
+                        <table class="week__plan__table">
+
+                            <thead>
+                            <tr class="table__header">
+                                <td class="day-name1">Poniedziałek</td>
+                                <td class="day-name2">Wtorek</td>
+                                <td class="day-name3">Środa</td>
+                                <td class="day-name4">Czwartek</td>
+                                <td class="day-name5">Piątek</td>
+                                <td class="day-name6">Sobota</td>
+                                <td class="day-name7">Niedziela</td>
+                            </tr>
+                            </thead>
+
+                            <tbody class="food__plan">
+                            <tr class="meal1">
+                                <td class="day1__meal1">Śniadanie</td>
+                                <td class="day2__meal1">Śniadanie</td>
+                                <td class="day3__meal1">Śniadanie</td>
+                                <td class="day4__meal1">Śniadanie</td>
+                                <td class="day5__meal1">Śniadanie</td>
+                                <td class="day6__meal1">Śniadanie</td>
+                                <td class="day7__meal1">Śniadanie</td>
+
+                            </tr>
+                            <tr class="meal2">
+                                <td class="day1__meal2">Drugie<br>śniadanie</td>
+                                <td class="day2__meal2">Drugie<br>śniadanie</td>
+                                <td class="day3__meal2">Drugie<br>śniadanie</td>
+                                <td class="day4__meal2">Drugie<br>śniadanie</td>
+                                <td class="day5__meal2">Drugie<br>śniadanie</td>
+                                <td class="day6__meal2">Drugie<br>śniadanie</td>
+                                <td class="day7__meal2">Drugie<br>śniadanie</td>
+
+                            </tr>
+                            <tr class="meal3">
+                                <td class="day1__meal3">Zupa</td>
+                                <td class="day2__meal3">Zupa</td>
+                                <td class="day3__meal3">Zupa</td>
+                                <td class="day4__meal3">Zupa</td>
+                                <td class="day5__meal3">Zupa</td>
+                                <td class="day6__meal3">Zupa</td>
+                                <td class="day7__meal3">Zupa</td>
+
+                            </tr>
+                            <tr class="meal4">
+                                <td class="day1__meal4">Drugie<br>danie</td>
+                                <td class="day2__meal4">Drugie<br>danie</td>
+                                <td class="day3__meal4">Drugie<br>danie</td>
+                                <td class="day4__meal4">Drugie<br>danie</td>
+                                <td class="day5__meal4">Drugie<br>danie</td>
+                                <td class="day6__meal4">Drugie<br>danie</td>
+                                <td class="day7__meal4">Drugie<br>danie</td>
+
+                            </tr>
+                            <tr class="meal5">
+                                <td class="day1__meal5">Kolacja</td>
+                                <td class="day2__meal5">Kolacja</td>
+                                <td class="day3__meal5">Kolacja</td>
+                                <td class="day4__meal5">Kolacja</td>
+                                <td class="day5__meal5">Kolacja</td>
+                                <td class="day6__meal5">Kolacja</td>
+                                <td class="day7__meal5">Kolacja</td>
+
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <div class="week__plan__container switch__buttons">
+                        <div class="switch__previous">
+
+                            <button class="button_previous" id="prevWeek"><i class="arrow_left"></i><i
+                                    class="arrow_left"></i> poprzedni
+                            </button>
+                        </div>
+                        <div class="switch__next">
+                            <button class="button_next" id="nextWeek">następny <i class="arrow_right"></i><i
+                                    class="arrow_right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+            <!--  ===== dashboard screen end            =====  -->
+            <!--  ===== ADD / EDIT RECIPE SCREEN START  =====  -->
             <div class="main__screen main__screen--addRecipe" id="addRecipe">
                 <!-- tutaj panel dodawania/edycji przepisu-->
 
@@ -197,55 +199,141 @@
                 </div>
                     <hr>
                 <form>
-
-                    <div class="main__recipes-info">
-                        <label>Nazwa przepisu</label>
-                        <textarea name="name"
+                        
+                    <div class="main__recipes-info"> 
+                        <label>Nazwa przepisu</label>                  
+                        <textarea name="name" 
                         id="main__recipes-text-name" cols="80" rows="1" ></textarea>
                             <br>
                             <label>Opis przepisu</label>
-
+                            
                             <textarea name="description"
-                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea>
-
+                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
+                              
                     </div>
                     <div class="main__recipes-lists">
-
+                           
                         <div class="main__recipes_add">
                             <label>INSTRUKCJE</label>
-                            <hr>
-
+                            <hr> 
+                            
                             <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square  fa-plus-instruction"></i>
                             <ol class="main__screen_order-list">
-
+                                                        
                             </ol>
                         </div>
-
+                        
                         <div class="main__recipes_add">
                             <label>SKŁADNIKI</label>
                             <hr>
                             <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square fa-plus-component"></i>
                             <ul class="main__screen_unorder-list">
-
-                            </ul>
+                                                                
+                            </ul>                           
                         </div>
-
+                            
                     </div>
                 </form>
             </div>
+            <!--  ===== add / edit recipe screen end    =====  -->
+            <!--  ==== ADD / EDIT SCHEDULE SCREEN START ===== -->
             <div class="main__screen main__screen--addSchedule" id="addSchedule">
-                <!-- tutaj panel dodawania/edycji planu-->
+                <div class="schedule__outercontainer">
+
+                    <div class="schedule__header">
+                        <div class="schedule__title">NOWY PLAN</div>
+                        <button class="btn" id="saveSchedBtn" form="schedForm" type="submit">Zapisz i zamknij</button>
+                    </div>
+                    <div class="schedule__innercontainer">
+                        <div class="input-wrapper">
+                            <label for="schedName">Nazwa planu</label>
+                            <input type="text" id="schedName" name="schedName" placeholder="Podaj nazwę planu">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="schedDescription">Opis planu</label>
+                            <textarea id="schedDescription" name="schedDecsription"
+                                      placeholder="Opisz swój plan"></textarea>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="schedWeekNo">Numer tygodnia</label>
+                            <input type="text" id="schedWeekNo" name="schedWeekNo"
+                                   placeholder="">
+                        </div>
+                        <form class="table-wrapper" id="schedForm">
+                            <!-- Naglowek tabeli -->
+                            <div class="table__head breakfast">ŚNIADANIE</div>
+                            <div class="table__head breakfast2">DRUGIE ŚNIADANIE</div>
+                            <div class="table__head soup">ZUPA</div>
+                            <div class="table__head maincourse">DRUGIE DANIE</div>
+                            <div class="table__head supper">KOLACJA</div>
+                            <!-- Dni tygodnia tabeli -->
+                            <div class="table__weekday mon">PONIEDZIAŁEK</div>
+                            <div class="table__weekday tue">WTOREK</div>
+                            <div class="table__weekday wed">ŚRODA</div>
+                            <div class="table__weekday thu">CZWARTEK</div>
+                            <div class="table__weekday fri">PIĄTEK</div>
+                            <div class="table__weekday sat">SOBOTA</div>
+                            <div class="table__weekday sun">NIEDZIELA</div>
+                            <!-- inputy tabeli -->
+                            <div class="table__cell mon breakfast"></div>
+                            <div class="table__cell mon breakfast2"></div>
+                            <div class="table__cell mon soup"></div>
+                            <div class="table__cell mon maincourse"></div>
+                            <div class="table__cell mon supper"></div>
+
+                            <div class="table__cell tue breakfast"></div>
+                            <div class="table__cell tue breakfast2"></div>
+                            <div class="table__cell tue soup"></div>
+                            <div class="table__cell tue maincourse"></div>
+                            <div class="table__cell tue supper"></div>
+
+                            <div class="table__cell wed breakfast"></div>
+                            <div class="table__cell wed breakfast2"></div>
+                            <div class="table__cell wed soup"></div>
+                            <div class="table__cell wed maincourse"></div>
+                            <div class="table__cell wed supper"></div>
+
+                            <div class="table__cell thu breakfast"></div>
+                            <div class="table__cell thu breakfast2"></div>
+                            <div class="table__cell thu soup"></div>
+                            <div class="table__cell thu maincourse"></div>
+                            <div class="table__cell thu supper"></div>
+
+                            <div class="table__cell fri breakfast"></div>
+                            <div class="table__cell fri breakfast2"></div>
+                            <div class="table__cell fri soup"></div>
+                            <div class="table__cell fri maincourse"></div>
+                            <div class="table__cell fri supper"></div>
+
+                            <div class="table__cell sat breakfast"></div>
+                            <div class="table__cell sat breakfast2"></div>
+                            <div class="table__cell sat soup"></div>
+                            <div class="table__cell sat maincourse"></div>
+                            <div class="table__cell sat supper"></div>
+
+                            <div class="table__cell sun breakfast"></div>
+                            <div class="table__cell sun breakfast2"></div>
+                            <div class="table__cell sun soup"></div>
+                            <div class="table__cell sun maincourse"></div>
+                            <div class="table__cell sun supper"></div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
+            <!--  ===== add / edit schedule screen end    =====  -->
         </div>
+        <!-- main container div end -->
     </main>
-<!--
-############ Glowny ekran applikacji - KONIEC  #############
--->
+    <!--
+    ############ Glowny ekran applikacji - KONIEC  #############
+    -->
 
 </div>
 <script src="./js/app.js" defer></script>
+<script src="./js/newSchedule.js" defer></script>
 </body>
 </html>
 

@@ -70,12 +70,25 @@ allRecipies.forEach(function(recipe){
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    // =============================||===============================
+    // ====== DEFINICJE ZMIENNYCH =\||/==============================
+    // =============================\/===============================
+
     const recipesTable = document.getElementById('recipesTable');
 
-    // const allRecipes = JSON.parse(localStorage.getItem('allRecipes'));
-    const allRecipes = allRecipies; //to trzeba przełączyć na powyższe jak localstorage recipies beda
 
-    const newRow = function (obj) { //funkcja tworząca wiersz listy z zawartością, na podstawie obiektu recipe
+    const allRecipes = JSON.parse(localStorage.getItem('allRecipies'));
+    // const allRecipes = allRecipies; //to trzeba przełączyć na powyższe jak localstorage recipies beda
+
+    const tableInnerHTML = document.createDocumentFragment();
+
+
+    // =======================================||======================
+    // ====== DEFINICJE FUNKCJI LOKALNYCH ===\||/=====================
+    // =======================================\/======================
+
+    //funkcja tworząca wiersz listy z zawartością, na podstawie obiektu recipe
+    const newRow = function (obj) {
         const row = document.createElement('DIV');
         row.classList.add('list__row', 'list__row--recipies');
 
@@ -104,7 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    const tableInnerHTML = document.createDocumentFragment();
+
+    // =======================================||======================
+    // ====== OBSŁUGA STRONY ================\||/=====================
+    // =======================================\/======================
 
 
     if (typeof allRecipes === 'undefined' || allRecipes === null || allRecipes === []) {
@@ -125,5 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     recipesTable.appendChild(tableInnerHTML);
+
+    // ======================================||=======================
+    // ====== DODAWANIE EVENT LISTENERÓW ===\||/======================
+    // ======================================\/=======================
+
+    // addRecipeBtn.addEventListener('click', goToApp)
 
 });

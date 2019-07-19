@@ -1,3 +1,42 @@
+// ================================================||=============
+// ====== DEFINICJE FUNKCJI DOSTĘPNYCH GLOBALNIE==\||/============
+// ================================================\/=============
+
+
+// ### f-cja czyszcząca displaya wszystkich screenów
+const hideAll = function () {
+    const mainScreensAll = document.querySelectorAll(".main__screen");
+    for (const el of mainScreensAll) {
+        el.classList.remove('main__screen--visible');
+    }
+};
+
+
+// ### f-cja pokazująca konkretny screen
+// (może być wywołana z parametrem lub jako eventListener do buttona zawierającego atrybut data-screenID="ID main__screena do pokazania"
+const showThisMainScreen = function (mainScreenID) {
+
+    hideAll();
+
+    let IdToShow = "";
+
+    // sprawdzam czy funkcja dostała parametr ręcznie; jak nie, to przypisuję parametr z buttona do jakiego była przypisana jako event listener
+    if (typeof mainScreenID === 'object') { //to sprawdza, czy fcja dostałą event, czy stringa
+        mainScreenID.preventDefault();
+        IdToShow = "#" + this.dataset.screenId;  // screenId to jest atrybut 'data-screen-id' buttona, ktory ma przekierować na odpowiedni ekran
+    } else {
+        IdToShow = "#" + mainScreenID;
+    }
+
+    const screenToShow = document.querySelector(IdToShow);
+    screenToShow.classList.add('main__screen--visible');
+};
+
+
+// ###################################################||############
+// ## DOCUMENT.ADDEVENTLISTENER("DOMCONTENTLOADED" ##\||/###########
+// ###################################################\/############
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // =============================||===============================
@@ -13,18 +52,45 @@ document.addEventListener("DOMContentLoaded", function () {
     const addRecipeDiv = mainContainer.querySelector('#addRecipe');
     const addScheduleDiv = mainContainer.querySelector('#addSchedule');
     const nameDisplay = document.getElementById('nameDisplay');
+    const prevWeekBtn = mainContainer.querySelector('#prevWeek');
+    const nextWeekBtn = mainContainer.querySelector('#nextWeek');
 
+    const addRecipeBtn = document.querySelector("#addRecipeBtn");
 
     // =============================||================================
     // ====== DEFINICJE FUNKCJI ===\||/===============================
     // =============================\/================================
 
-    // ### f-cja czyszcząca displaya wszystkich screenów
-    const hideAll = function () {
-        for (const el of mainScreensAll) {
-            el.classList.remove('main__screen--visible');
-        }
-    };
+
+    // =======================================||======================
+    // ====== DEFINICJE FUNKCJI LOKALNYCH ===\||/=====================
+    // =======================================\/======================
+
+    // // ### f-cja czyszcząca displaya wszystkich screenów  -- fcja przeniesiona do globalnych
+    // const hideAll = function () {
+    //     for (const el of mainScreensAll) {
+    //         el.classList.remove('main__screen--visible');
+    //     }
+    // };
+    //
+    //
+    // // ### f-cja pokazująca konkretny screen   -- fcja przeniesiona do globalnych
+    // // (może być wywołana z parametrem lub jako eventListener do buttona zawierającego atrybut data-screenID="ID main__screena do pokazania"
+    // const showThisMainScreen = function (mainScreenID) {
+    //     hideAll();
+    //
+    //     // sprawdzam czy funkcja dostała parametr ręcznie; jak nie, to przypisuję parametr z buttona do jakiego była przypisana jako event listener
+    //     let IdToShow = "";
+    //     if (typeof mainScreenID === 'object') { //to sprawdza, czy fcja dostałą event, czy stringa
+    //         IdToShow = "#" + this.dataset.screenId;  // screenId to jest atrybut 'data-screen-id' buttona, ktory ma przekierować na odpowiedni ekran
+    //     } else {
+    //         IdToShow = "#" + mainScreenID;
+    //     }
+    //
+    //     const screenToShow = mainContainer.querySelector(IdToShow);
+    //     screenToShow.classList.add('main__screen--visible');
+    // };
+
 
     // ### f-cja sprawdzająca, czy jest zapisane imię i renderująca odpowiednio stronę
     const isNew = function () {
@@ -62,6 +128,29 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
+    // ###funkcja eventListener przekierowująca stronę na app.html i zapisująca na jaki ekran ma wejść app.html
+    // (button musi mieć atrybut 'data-screen-id' równy ID main__screena do pokazania)
+    const goToApp = function (e) {
+        e.preventDefault();
+        const screenToShow = this.dataset.screenId;
+        window.sessionStorage.setItem('showScreen', screenToShow);
+        window.location = "app.html";
+    };
+
+
+    // ### f-cja sprawdzająca, czy nie nastąpiło przekierowanie z funkcji goToApp
+    // z poleceniem zmiany screena i zmieniająca go odpowiednio
+    const shouldShowScreen = function () {
+        const screenToShow = window.sessionStorage.getItem('showScreen');
+        if (screenToShow) {
+            showThisMainScreen(screenToShow);
+        }
+        window.sessionStorage.removeItem('showScreen');
+    };
+
+    shouldShowScreen();
+
+
     // ======================================||=======================
     // ====== DODAWANIE EVENT LISTENERÓW ===\||/======================
     // ======================================\/=======================
@@ -73,189 +162,178 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ---- na stronie '/recipe.html'------
-    if (window.location.pathname === "/recipe.html") {
-        // tutaj kod
+    if (window.location.pathname === "/recipes.html") {
+        addRecipeBtn.addEventListener('click', goToApp);
     }
 
 
+//// TUTAJ SĄ FRAGMENTY KODU KTÓREGO JESZCZE NIE UŻYŁEM
+    /*
+     Metoda `.showInfo()`
+     wyświetlająca w konsoli wszystkie informacje o przepisie */
+    Recipe.prototype.showInfo = function () {
+        console.warn(this.id, this.title); // wyświetl id oraz tytuł
+        console.warn(this.description); // wyświetl opis
+        this.ingredients.map(function (elem, i) {
+            console.warn(i, elem); // wyświetl każdy element
+        })
+        this.instructions.map(function (elem, i) {
+            console.warn(i, elem); // wyświetl każdy element
+        })
+    }
 
-    // ======================================||=======================
-    // ====== ROBOCZE - DO USUNIĘCIA POTEM =\||/======================
-    // ======================================\/=======================
+    /*
+    Metoda `.saveToLocalStorage()`
+    zapisująca do localStorage informacje o przepisie */
+    Recipe.prototype.saveToLocalStorage = function () {
 
-    // ### f-cja czyszcząca localstorage POMOCNICZA <-- DO USUNIĘCIA
-    const xxx = function () {
-        localStorage.clear();
-        location.reload();
+        //   allRecipies;
+        //   /* if(){
+        //       // uzupełnij
+        //     }else{
+        //       // uzupełnij
+        //     } */
     };
-    if (window.location.pathname === "/app.html") {
-        const clrBtn = document.querySelector("#wyczysc");
-        clrBtn.addEventListener('click', xxx)
+
+
+    // utworzenie kilku przykładowych przepisów
+    /*
+    var newRecipe1 = new Recipe(allRecipies.length + 1, "Jajecznica na boczku", "Taką jajecznicę lubie najbardziej ;p ");
+    allRecipies.push(newRecipe1); // dodanie przepisu do globalnej tablicy
+    var newRecipe2 = new Recipe(allRecipies.length + 1, "Fasolka po bretońsku", "Taka fasolka że kołdrę podnosi!");
+    allRecipies.push(newRecipe2);
+    var newRecipe3 = new Recipe(allRecipies.length + 1, "Sałatka grecka", "Oryginalna sałatka grecka z pomidora, ogórka, czerwonej cebuli i czarnych oliwek, z oliwą i oregano. ");
+    allRecipies.push(newRecipe3);
+    */
+    // dodawanie składników do przepisu (newRecipe1, allRecipies[0])
+    /*
+    newRecipe1.ingredients.push("3 jajka");
+    newRecipe1.ingredients.push("mała cebula");
+    newRecipe1.ingredients.push("szczypiorek");
+    newRecipe1.ingredients.push("5 plasterków boczku");
+
+    newRecipe1.instructions.push("Rozpuść masło na patelni i podgrzej.");
+    newRecipe1.instructions.push("Dodaj boczek.");
+    newRecipe1.instructions.push("Na rozgrzaną patelnię wbij jajaka i mieszaj doprawiając.");
+    newRecipe1.instructions.push("Podawaj z grzankami. Smacznego!");
+    */
+
+//-----------------------------------------------------------------------------------
+    /*  PRZEPIS
+      Ten plik zawiera implementację obiektu reprezentującego przepis, jego medoty oraz pola obiektu. Na końcu sposób użycia, polacam odpalić konsolę ;p
+
+      Recipe(id,title,description)
+      id           - int, identyfikator przepisu
+      title        - string, nazwa przepisu
+      description  - string, opis przepisu
+      ingredients  - array, składniki przepisu
+      instructions - array, instrukcje przepisu
+  */
+
+    function Recipe(id, title, description) {
+        this.id = id; // id przepisu
+        this.title = title; // nazwa przepisu
+        this.description = description; // opis przepisu
+        this.ingredients = []; // składniki przepisu
+        this.instructions = []; // instrukcje przepisu
     }
 
+    // przygotowanie globalnej zmiennej przechowującej wszystkie przepisy
+    var allRecipies = [];
+    let dataFromLocalStorage = localStorage.getItem('allRecipies');
+    if (dataFromLocalStorage !== null) {
+        allRecipies = JSON.parse(dataFromLocalStorage);
+    }
+        const nameRecipes = document.querySelector("#main__recipes-text-name");
+        const discRecipes = document.querySelector("#main__recipes-txt-discription");
+        ///^ Textarea's jeden z nazwą drugi z opisem raczej widać który to który ;)
 
-});
+        const indexComponent = document.querySelector("#main__recipes-component");
+        const indexInstruction = document.querySelector("#main__recipes-instruction");
+        ///^ To są Textarea's z dodawaniem składników i intrukcji
 
+        const addOrderList = document.querySelector(".main__screen_order-list");
+        const addUnorderList = document.querySelector(".main__screen_unorder-list");
+        ///^ To są te listy z scrolami w których znajdują się składniki i instrukcja krok po kroku
 
+        const addButtonRecipes = document.querySelector(".main__recipes-button");
+        ///^ przycisk Zapisz i zamknij
 
-//// TUTAJ SĄ FRAGMENTY KODU KTÓREGO JESZCZE NIE UŻYŁEM 
-  /* 
-   Metoda `.showInfo()` 
-   wyświetlająca w konsoli wszystkie informacje o przepisie */
-   Recipe.prototype.showInfo = function() {
-    console.warn(this.id, this.title); // wyświetl id oraz tytuł
-    console.warn(this.description); // wyświetl opis
-    this.ingredients.map(function(elem, i) {
-      console.warn(i, elem); // wyświetl każdy element
-    })
-    this.instructions.map(function(elem, i) {
-      console.warn(i, elem); // wyświetl każdy element
-    })
-  }
-  
-  /* 
-  Metoda `.saveToLocalStorage()` 
-  zapisująca do localStorage informacje o przepisie */
-  Recipe.prototype.saveToLocalStorage = function() {
+        const addComponent = document.querySelector(".fa-plus-component");
+        const addInstruction = document.querySelector(".fa-plus-instruction");
+        ///^ To są przyciski dodające produkt do listy oraz kroki instrukcji
+        ///a to poniżej to ikonka edycji w polach Składniki i Instrukcje
+        const editText = document.querySelector(".fas.fa-edit");
+        // console.log(addComponent);
 
-    allRecipies;
-    /* if(){
-        // uzupełnij
-      }else{
-        // uzupełnij
-      } */
-  }
-  
- 
-  
-  
-  // utworzenie kilku przykładowych przepisów 
-  /*
-  var newRecipe1 = new Recipe(allRecipies.length + 1, "Jajecznica na boczku", "Taką jajecznicę lubie najbardziej ;p ");
-  allRecipies.push(newRecipe1); // dodanie przepisu do globalnej tablicy
-  var newRecipe2 = new Recipe(allRecipies.length + 1, "Fasolka po bretońsku", "Taka fasolka że kołdrę podnosi!");
-  allRecipies.push(newRecipe2);
-  var newRecipe3 = new Recipe(allRecipies.length + 1, "Sałatka grecka", "Oryginalna sałatka grecka z pomidora, ogórka, czerwonej cebuli i czarnych oliwek, z oliwą i oregano. ");
-  allRecipies.push(newRecipe3);
-  */
-  // dodawanie składników do przepisu (newRecipe1, allRecipies[0])
-  /*
-  newRecipe1.ingredients.push("3 jajka"); 
-  newRecipe1.ingredients.push("mała cebula"); 
-  newRecipe1.ingredients.push("szczypiorek"); 
-  newRecipe1.ingredients.push("5 plasterków boczku"); 
-  
-  newRecipe1.instructions.push("Rozpuść masło na patelni i podgrzej.");
-  newRecipe1.instructions.push("Dodaj boczek."); 
-  newRecipe1.instructions.push("Na rozgrzaną patelnię wbij jajaka i mieszaj doprawiając."); 
-  newRecipe1.instructions.push("Podawaj z grzankami. Smacznego!"); 
-  */
-  
-//-----------------------------------------------------------------------------------
-  /*  PRZEPIS 
-    Ten plik zawiera implementację obiektu reprezentującego przepis, jego medoty oraz pola obiektu. Na końcu sposób użycia, polacam odpalić konsolę ;p 
-
-    Recipe(id,title,description) 
-    id           - int, identyfikator przepisu
-    title        - string, nazwa przepisu 
-    description  - string, opis przepisu
-    ingredients  - array, składniki przepisu
-    instructions - array, instrukcje przepisu 
-*/
-
-  function Recipe(id, title, description) {
-    this.id = id; // id przepisu
-    this.title = title; // nazwa przepisu
-    this.description = description; // opis przepisu
-    this.ingredients = []; // składniki przepisu
-    this.instructions = []; // instrukcje przepisu
-  }
-   // przygotowanie globalnej zmiennej przechowującej wszystkie przepisy
-  var allRecipies = [];
-
-  const nameRecipes = document.querySelector("#main__recipes-text-name");
-  const discRecipes = document.querySelector("#main__recipes-txt-discription");
-  ///^ Textarea's jeden z nazwą drugi z opisem raczej widać który to który ;) 
-
-  const indexComponent = document.querySelector("#main__recipes-component");
-  const indexInstruction = document.querySelector("#main__recipes-instruction");
-  ///^ To są Textarea's z dodawaniem składników i intrukcji
-
-  const addOrderList = document.querySelector(".main__screen_order-list"); 
-  const addUnorderList = document.querySelector(".main__screen_unorder-list"); 
-  ///^ To są te listy z scrolami w których znajdują się składniki i instrukcja krok po kroku
-
-  const addButtonRecipes = document.querySelector(".main__recipes-button");
-  ///^ przycisk Zapisz i zamknij
-
-  const addComponent = document.querySelector(".fa-plus-component");
-  const addInstruction = document.querySelector(".fa-plus-instruction");
-  ///^ To są przyciski dodające produkt do listy oraz kroki instrukcji
-  ///a to poniżej to ikonka edycji w polach Składniki i Instrukcje
-  const editText = document.querySelector(".fas.fa-edit");
-
-  
 ////f-cja sprawdzajaca czy cos jest nie pełne (niestety sprawdza tylko nazwę i opis :/)
-  const addAllElements = function(e){
-      e.preventDefault();
-    let emptyElement ="";
-    if(addUnorderList.value !== "" &&
-        addOrderList.value !== "" &&  
-        discRecipes.value !== ""&&
-        nameRecipes.value !== ""){
-        ///tworzy nowy objekt
+    const addAllElements = function (e) {
+        e.preventDefault();
+        let emptyElement = "";
+        if (addUnorderList.value !== "" &&
+            addOrderList.value !== "" &&
+            discRecipes.value !== "" &&
+            nameRecipes.value !== "") {
+            ///tworzy nowy objekt
             newRecipe = new Recipe(allRecipies.length + 1, nameRecipes.value,
                 discRecipes.value);
-        ///i iteruje po listach dodajac do objektu    
-            for(let el of addOrderList.children){
+            ///i iteruje po listach dodajac do objektu
+            for (let el of addOrderList.children) {
                 newRecipe.ingredients.push(el);
             }
 
-            for(let el of addUnorderList.children){
-                newRecipe.instructions.push(el); 
+            for (let el of addUnorderList.children) {
+                newRecipe.instructions.push(el);
             }
-        ///wypycha do globalnej zmiennej przepis   
-            allRecipies.push(newRecipe); 
-            console.log(newRecipe);
+            ///wypycha do globalnej zmiennej przepis
+            allRecipies.push(newRecipe);
+
 
             //!!tutaj przeba dodać funkcję chowającą dodawanie przepisu!!!!!!
-        
+
+            localStorage.setItem('allRecipies',JSON.stringify(allRecipies));
+
+            // dataFromLocalStorage = localStorage.getItem('allRecipies');
+            // if (dataFromLocalStorage !== null) {
+            //     allRecipies = JSON.parse(dataFromLocalStorage);
+            // } else {
+            //     allScheds.push(this);
+            //     localStorage.setItem('allScheds', JSON.stringify(allScheds))
+            // }
 
 
+        } else {
+            console.log("Czegos brakuje!");
+        }
+    };
 
-    }else{
-        console.log("Czegos brakuje!");
-    }
-  }
+    ////f-cja dodająca składniki do listy
+    const saveComponent = function (e) {
+        e.preventDefault();
 
- ////f-cja dodająca składniki do listy 
-  const saveComponent = function (e) {
-    e.preventDefault();
-    
-    if (indexComponent.value !== "") {
-        const el = document.createElement("li");
-        el.innerText = indexComponent.value;
-        el.innerHTML = `${indexComponent.value} <i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
-        addUnorderList.appendChild(el);
-         
-    } else {
-        indexComponent.placeholder = 'Musisz podać jakiś produkt';
-        
-    }
-    
-  }
+        if (indexComponent.value !== "") {
+            const el = document.createElement("li");
+            el.innerText = indexComponent.value;
+            el.innerHTML = `${indexComponent.value} <i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
+            addUnorderList.appendChild(el);
 
-  ////f-cja dodająca kroki do listy instrukcji 
+        } else {
+            indexComponent.placeholder = 'Musisz podać jakiś produkt';
+
+        }
+    };
+
+    ////f-cja dodająca kroki do listy instrukcji
     const saveInstruction = function (e) {
         e.preventDefault();
-        
+
         if (indexInstruction.value !== "") {
             const el = document.createElement("li");
             el.innerText = indexInstruction.value;
             el.innerHTML = `${indexInstruction.value} <i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
             const textToEdit = el.innerText;
             addOrderList.appendChild(el);
-            el.querySelector(".fas.fa-edit").addEventListener('click',function(){
+            el.querySelector(".fas.fa-edit").addEventListener('click', function () {
                 el.innerHTML = `<input id="nowyinput"><i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i></input>`;
                 el.querySelector('#nowyinput').value = textToEdit;
                 el.querySelector('#nowyinput').addEventListener('keypress', function (e) {
@@ -266,47 +344,46 @@ document.addEventListener("DOMContentLoaded", function () {
                         el.innerHTML = `${textToSave}<i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
                     }
                 })
-            });;
-            
+            });
+
         } else {
-            indexInstruction.placeholder = 'Musisz podać jakąś instrukcję';
-            
+            indexInstruction.placeholder = 'Musisz jakąś instrukcję';
+
         }
-    
-    console.log('hello');
+
+        console.log('hello');
 
     }
 
 //funkcja czyszcząca pole "Składniki"
-    const clearComponent = function(e) {
+    const clearComponent = function (e) {
         indexComponent.value = '';
     }
 
 //funkcja czyszcząca pole "Instrukcje"
-const clearInstruction = function(e) {
-    indexInstruction.value = '';
-}
+    const clearInstruction = function (e) {
+        indexInstruction.value = '';
+    }
 
 //funkcja edytująca dodane pole
-const editElement = function(e) {
-    
-    console.log('śmietnik');
-}
+    const editElement = function (e) {
 
-
-addComponent.addEventListener('click',saveComponent ); // event dodawania do listy 
-addComponent.addEventListener('click',clearComponent); //event czyszczący pole "Składniki"
-addInstruction.addEventListener('click',saveInstruction );// event dodawania do listy
-addInstruction.addEventListener('click',clearInstruction); //event czyszczący pole "Składniki"
-addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
-
-
-    
+        console.log('śmietnik');
+    }
 
     if (window.location.pathname === "/app.html") {
-        const clrBtn = document.querySelector("#wyczysc");
-        clrBtn.addEventListener('click', xxx)
+
+        addComponent.addEventListener('click', saveComponent); // event dodawania do listy
+        addComponent.addEventListener('click', clearComponent); //event czyszczący pole "Składniki"
+        addInstruction.addEventListener('click', saveInstruction);// event dodawania do listy
+        addInstruction.addEventListener('click', clearInstruction); //event czyszczący pole "Składniki"
+        addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
+
+        document.querySelector("#XXX").addEventListener('click', showThisMainScreen);
+        document.querySelector("#YYY").addEventListener('click', showThisMainScreen);
     }
+});
+
 
 
 
