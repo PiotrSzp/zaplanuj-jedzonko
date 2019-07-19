@@ -85,6 +85,7 @@
                 </div>
             </div>
             <!--  ===== DASHBOARD SCREEN START  =====  -->
+
             <div class="main__screen main__screen--dashboard" id="dashboard">
                 <div class="week__plan__container">
                         <div class="week__plan__header">
@@ -176,6 +177,16 @@
                     </div>
 
                 </div>
+                <button class="btn__add__recipe">
+                    <span class="btn__icon__plus"></span>
+                    <span class="btn__name__przepis">dodaj przepis</span>
+                </button>
+                <button class="btn__add__recipe">
+                    <span class="btn__icon__plus"></span>
+                    <span class="btn__name__plan">dodaj plan</span>
+                </button>
+                <div>CZEŚĆ, JESTEM GŁÓWNYM EKRANEM APLIKACJI. ROBIĘ CO MOGĘ...</div>
+                <button id="wyczysc">roboczy button do czyszczenia localstorage</button>
             </div>
             <div class="main__screen main__screen--addRecipe" id="addRecipe">
                 <!-- tutaj panel dodawania/edycji przepisu-->
@@ -186,41 +197,41 @@
                 </div>
                     <hr>
                 <form>
-                        
-                    <div class="main__recipes-info"> 
-                        <label>Nazwa przepisu</label>                  
-                        <textarea name="name" 
+
+                    <div class="main__recipes-info">
+                        <label>Nazwa przepisu</label>
+                        <textarea name="name"
                         id="main__recipes-text-name" cols="80" rows="1" ></textarea>
                             <br>
                             <label>Opis przepisu</label>
-                            
+
                             <textarea name="description"
-                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea> 
-                              
+                        id="main__recipes-txt-discription" cols="80" rows="4"></textarea>
+
                     </div>
                     <div class="main__recipes-lists">
-                           
+
                         <div class="main__recipes_add">
                             <label>INSTRUKCJE</label>
-                            <hr> 
-                            
+                            <hr>
+
                             <textarea name="instruction" id="main__recipes-instruction" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square  fa-plus-instruction"></i>
                             <ol class="main__screen_order-list">
-                                                        
+
                             </ol>
                         </div>
-                        
+
                         <div class="main__recipes_add">
                             <label>SKŁADNIKI</label>
                             <hr>
                             <textarea name="components" id="main__recipes-component" cols="40" rows="4" ></textarea>
                             <i class="fas fa-plus-square fa-plus-component"></i>
                             <ul class="main__screen_unorder-list">
-                                                                
-                            </ul>                           
+
+                            </ul>
                         </div>
-                            
+
                     </div>
                 </form>
             </div>

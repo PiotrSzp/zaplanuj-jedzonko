@@ -1,0 +1,172 @@
+//======== COLORS ========
+$colorNav: #5B605F; // panel boczny, nawigacja
+$colorText: #4a4a49; // nagłówek, , kolor tekstu w kolumnach
+$colorOrange: #FF6600; // przyciski, wyróżnienia, nagłówki ekranów
+$colorBackg: #FFFFFA; // kolor tła ekranów
+$colorInfo: #3498DB; // kolor wiadomości typu info,
+$colorWarn: #FFB03B; // kolor wiadomości typu warning
+$colorSuccess: #468966; // kolor wiadomości typu success
+$colorTrash: #BD4932; // kolor ikony kosza
+$colorTabText: #A1A194; // kolor tekstu z wierszy w tabelach, ikony rozszerzonych funkcji
+$colorFocus: #add8e6; //kolor po podświetleniu formularzy
+
+
+// CDN FONTAWESOME
+// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+//
+// Sass:
+// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+
+@import "app";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/regular.scss";
+
+body {
+  background-color: $colorBackg;
+}
+
+.newsletter__container {
+  background: #4a4a49;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+}
+
+
+.newsletter__text {
+  h3 {
+    color: white;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+  }
+
+
+  .newsletter__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    input {
+      width: 200px;
+      height: 30px;
+      padding: 0;
+      border: none;
+    }
+
+    .newsletter__submit {
+      background: #FF6600;
+      border: none;
+      width: 150px;
+      height: 30px;
+      padding: 0;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  .newsletter__form > input {
+    &:focus {
+      background-color: $colorFocus;
+    }
+  }
+
+  .newsletter__submit {
+    &:focus {
+      border: 1px solid $colorFocus;
+    }
+  }
+
+  .about__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Open Sans';
+  }
+
+  .about__box {
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4a4a49;
+
+  }
+
+  .box__image--check {
+    height: 60px;
+    width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+  }
+
+
+  .box__image--clock {
+    height: 60px;
+    width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+  }
+
+  .box__image--menu {
+    height: 60px;
+    width: 60px;
+
+    i {
+      font-size: 60px;
+    }
+  }
+
+  .about__box > h1 {
+    text-align: center;
+  }
+
+  .box__text {
+    line-height: 25px;
+    text-align: center;
+
+    .author__container {
+      margin: 0 auto;
+      font-family: 'Open Sans';
+      margin: 30px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .author__picture {
+      margin: 40px 0;
+      background: #4a4a49;
+      width: 300px;
+      height: 300px;
+    }
+
+    .author__info {
+      margin: 40px 0;
+      width: 40%;
+      color: #4a4a49;
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+
+      .author__info--text {
+        line-height: 25px;
+
+      }
+    }
+  }
+}
+

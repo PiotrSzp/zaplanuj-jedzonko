@@ -124,7 +124,6 @@
   padding-left: 14px;
 }
 
-
 .app-nav__link--active {
   font-weight: 700;
 }
@@ -163,6 +162,59 @@
 .third__notification__presence {
   @include notification(#468966);
 }
+
+.btn__add__recipe {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border: 1px dotted rgb(70, 137, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn__icon__plus {
+  border: 3px solid rgb(70, 137, 102);
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+}
+
+.btn__icon__plus::before,
+.btn__icon__plus::after {
+  content: "";
+  width: 3px;
+  height: 70%;
+  background: rgb(70, 137, 102);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn__icon__plus::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.btn__name__przepis{
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 10px;
+  color: rgb(70, 137, 102);
+}
+
+.btn__name__plan {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 10px;
+  color: rgb(70, 137, 102);
+}
+
 
 //=========== 4. APP MAIN ================ (ogolne style okien aplikacji)
 .app-main {
@@ -384,7 +436,6 @@
     }
   }
 }
-
 
 
 
