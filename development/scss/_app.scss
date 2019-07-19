@@ -65,6 +65,7 @@
   padding-right: 42px;
   box-shadow: inset 0 -8px 10px -10px black;
 
+
   // .app-header__title {
   // }
 
@@ -334,7 +335,7 @@
 
     .button_previous, .button_next {
       border: none;
-      background-color: #FFFFFA;
+      background: transparent;
       color: #FF6600;
       font-weight: 600;
     }
