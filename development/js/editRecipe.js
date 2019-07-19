@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#main__recipes-txt-discription').value = recipe.description
 
     
-    debugger;
 
 
     

@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const addComponent = document.querySelector(".fa-plus-component");
   const addInstruction = document.querySelector(".fa-plus-instruction");
   ///^ To są przyciski dodające produkt do listy oraz kroki instrukcji
+  ///a to poniżej to ikonka edycji w polach Składniki i Instrukcje
+  const editText = document.querySelector(".fas.fa-edit");
 
   
 ////f-cja sprawdzajaca czy cos jest nie pełne (niestety sprawdza tylko nazwę i opis :/)
@@ -217,10 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(newRecipe);
 
             //!!tutaj przeba dodać funkcję chowającą dodawanie przepisu!!!!!!
-
-
-
-
+        
 
 
 
@@ -236,12 +235,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (indexComponent.value !== "") {
         const el = document.createElement("li");
         el.innerText = indexComponent.value;
+        el.innerHTML = `${indexComponent.value} <i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
         addUnorderList.appendChild(el);
          
     } else {
         indexComponent.placeholder = 'Musisz podać jakiś produkt';
         
     }
+    
   }
 
   ////f-cja dodająca kroki do listy instrukcji 
@@ -251,20 +252,54 @@ document.addEventListener("DOMContentLoaded", function () {
         if (indexInstruction.value !== "") {
             const el = document.createElement("li");
             el.innerText = indexInstruction.value;
+            el.innerHTML = `${indexInstruction.value} <i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
+            const textToEdit = el.innerText;
             addOrderList.appendChild(el);
-           
+            el.querySelector(".fas.fa-edit").addEventListener('click',function(){
+                el.innerHTML = `<input id="nowyinput"><i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i></input>`;
+                el.querySelector('#nowyinput').value = textToEdit;
+                el.querySelector('#nowyinput').addEventListener('keypress', function (e) {
+                    var key = e.which || e.keyCode;
+                    if (key === 13) { // 13 is enter
+                        e.preventDefault();
+                        var textToSave = this.value;
+                        el.innerHTML = `${textToSave}<i class="fas fa-edit" title="Edytuj mnie" style="color:#FF6600; font-size: 14px"></i>`;
+                    }
+                })
+            });;
+            
         } else {
-            indexInstruction.placeholder = 'Musisz jakąś instrukcję';
+            indexInstruction.placeholder = 'Musisz podać jakąś instrukcję';
             
         }
-
+    
     console.log('hello');
 
     }
 
+//funkcja czyszcząca pole "Składniki"
+    const clearComponent = function(e) {
+        indexComponent.value = '';
+    }
+
+//funkcja czyszcząca pole "Instrukcje"
+const clearInstruction = function(e) {
+    indexInstruction.value = '';
+}
+
+//funkcja edytująca dodane pole
+const editElement = function(e) {
+    
+    console.log('śmietnik');
+}
+
+
 addComponent.addEventListener('click',saveComponent ); // event dodawania do listy 
+addComponent.addEventListener('click',clearComponent); //event czyszczący pole "Składniki"
 addInstruction.addEventListener('click',saveInstruction );// event dodawania do listy
+addInstruction.addEventListener('click',clearInstruction); //event czyszczący pole "Składniki"
 addButtonRecipes.addEventListener('click', addAllElements);//event przyciskania tworzenia objektu
+
 
     
 
