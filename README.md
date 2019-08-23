@@ -1,5 +1,16 @@
-# ScrumLab
-This is a repository dedicated to ScrumLab front-end project.
+# ScrumLab Project
+This is a repository dedicated to ScrumLab front-end project we were working on during bootcamp, in the middle of a course. We had 4 days to create it. 
+
+#### The point of a project wasn't to deliver fully functional product, but rather familiarize ourselves with Scrum and GitFlow metodology, as well as with coding in a team and dealing with conflicts and so on. ####
+
+After deadline, project was abandoned in state as it is, due to other projects and further course of a classes. But maybye we will pick it up one day.
+
+
+
+
+
+Original readme below.
+
 
 ## How to start
 To start development follow this instruction:
